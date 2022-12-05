@@ -1,0 +1,57 @@
+/* 본고딕 */
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),
+		 url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),
+		 url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');
+}
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),
+		 url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),
+		 url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');
+}
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),
+		 url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),
+		 url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');
+}
+
+/* SUIT */
+@font-face {
+	font-family: "SUIT";
+	font-style: normal;
+	font-weight: 400;
+	src:url(../../fonts/SUIT-Regular.woff) format("woff");
+}
+@font-face {
+	font-family: "SUIT";
+	font-style: normal;
+	font-weight: 500;
+	src:url(../../fonts/SUIT-Medium.woff) format("woff");
+}
+@font-face {
+	font-family: "SUIT";
+	font-style: normal;
+	font-weight: 600;
+	src:url(../../fonts/SUIT-SemiBold.woff) format("woff");
+}
+@font-face {
+	font-family: "SUIT";
+	font-style: normal;
+	font-weight: 700;
+	src:url(../../fonts/SUIT-Bold.woff) format("woff");
+}
+@font-face {
+	font-family: "SUIT";
+	font-style: normal;
+	font-weight: 800;
+	src:url(../../fonts/SUIT-ExtraBold.woff) format("woff");
+}

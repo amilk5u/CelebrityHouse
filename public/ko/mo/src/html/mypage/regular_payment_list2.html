@@ -1,0 +1,42 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+            <div class="page_wrap">
+                <div class="btn_align_left">
+                    <button type="button" class="btn_page_prev2">이전페이지로 이동</button>
+                </div>
+            </div>
+            <!-- container -->
+            <div class="mypage_wrap">
+                <div class="sub_title_wrap">
+                    <h2>멤버십 정기결제 관리</h2>
+                </div>
+                <div class="membership_list_wrap">
+                    <strong>등록된 결제 수단</strong>
+                    <a href="#" class="edit_btn">편집하기</a>
+                    <div class="registered_credit">
+                        <ol>
+                            <li class="green represen_credit">
+                                <div class="registered_cont">
+                                    <strong>국민</strong>
+                                    <p>**** **** **** 8429</p>
+                                </div>
+                                <button type="button" disabled>삭제</button>
+                            </li>
+                        </ol>
+                        <a href="#" class="btn_default btn_type03"><span>결제수단 추가</span></a>
+                    </div>
+
+                    <ul class="notification_type01">
+                        <li>결제 수단은 최소 1개 이상 등록되어야 합니다.</li>
+                        <li>결제 수단을 삭제하려면 먼저 다른 결제 수단을 등록해주세요.</li>
+                        <li>결제 수단 추가 시 실질적 결제는 이루어지지 않습니다.</li>
+                        <li>첫 번째 결제 수단을 기준으로 결제가 진행됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //container -->
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})

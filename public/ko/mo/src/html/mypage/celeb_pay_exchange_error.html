@@ -1,0 +1,53 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+            <div class="page_wrap">
+                <div class="btn_align_left">
+                    <button type="button" class="btn_page_prev">이전페이지로 이동</button>
+                </div>
+            </div>
+            <!-- container -->
+            <div class="exchange_wrap">
+                <div class="sub_title_wrap">
+                    <h2>셀럽페이 환전</h2>
+                    <a href="#" class="exchange_btn">적립/환전 내역</a>
+                </div>
+                <ul class="exchange_celeb">
+                    <li>
+                        <p>나의 셀럽페이</p>
+                        <strong>10,350<span>원</span></strong>
+                    </li>
+                    <!-- 환전 요청금액 기본 -->
+                    <!--<li>
+                        <p>환전 요청금액</p>
+                        <div>
+                            <input type="text" placeholder="10,000원 이상 입력" value="">
+                            &lt;!&ndash; input태그에 입력 시 <button type="button" class="txt_delete">에 active클래스 추가 &ndash;&gt;
+                            <button type="button" class="txt_delete">지우기</button>
+                        </div>
+                    </li>-->
+                    <!-- 환전 요청금액 오류시 활성화 -->
+                    <li>
+                        <p>환전 요청금액</p>
+                        <div class="error_msg">
+                            <input type="text" placeholder="10,000원 이상 입력" value="10,000원">
+                            <!-- input태그에 입력 시 <button type="button" class="txt_delete">에 active클래스 추가 -->
+                            <button type="button" class="txt_delete active">지우기</button>
+                        </div>
+                        <span>10,000원 이상부터 환전이 가능합니다.</span>
+                        <!--<span>보유하고 있는 셀럽페이 금액을 초과하였습니다.</span>-->
+                    </li>
+                </ul>
+                <div class="exchange_btn btn_wrap_fix">
+                    <ul class="notification_type01">
+                        <li>셀럽페이는 10,000원 이상부터 환전이 가능합니다.</li>
+                        <li>셀럽페이 환전 요청 시 관리자 확인 후 영업일 기준 5일 내에 입력한 계좌로 입금됩니다.</li>
+                    </ul>
+                    <a href="#" class="btn_default btn_type01 btn_disabled">환전 요청하기</a>
+                </div>
+            </div>
+            <!-- //container -->
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})

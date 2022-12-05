@@ -1,0 +1,54 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+            <div class="page_wrap">
+                <div class="btn_align_left">
+                    <button type="button" class="btn_page_prev">이전페이지로 이동</button>
+                </div>
+                <h2>회원가입</h2>
+            </div>
+            <!-- container -->
+            <div class="signup_wrap signup_wrap_none">
+                <div class="signup_content">
+                    <ol class="signup_process">
+                        <li class="on">약관 동의</li>
+                        <li class="ing">계정 생성</li>
+                        <li>본인 인증</li>
+                    </ol>
+                    <form action="">
+                        <fieldset>
+                            <legend>회원가입 정보입력</legend>
+                            <div class="registration_form">
+                                <div class="form_type01">
+                                    <div>
+                                        <input type="text" name="" id="txt_email" placeholder="사용 가능한 이메일 주소" value="gildong@na">
+                                        <label for="txt_email">이메일</label>
+                                    </div>
+                                </div>
+                                <div class="form_type01">
+                                    <div class="pw_chk">
+                                        <input type="password" name="" id="txt_password" placeholder="알파벳 소문자+숫자+특수문자 8자 이상" value="123456" class="validField">
+                                        <label for="txt_password">비밀번호</label>
+                                        <button type="button" class="btn_pwChk">보기</button>
+                                    </div>
+                                </div>
+                                <div class="form_type01">
+                                    <div class="pw_chk">
+                                        <input type="password" name="" id="txt_password_chk" placeholder="입력한 비밀번호 확인">
+                                        <label for="txt_password_chk">비밀번호 확인</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="btn_wrap btn_half">
+                    <a href="#" class="btn_default btn_type02">이전</a>
+                    <a href="#" class="btn_default btn_type01 btn_disabled">다음</a>
+                </div>
+            </div>
+            <!-- //container -->
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>셀럽하우스</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="title" content="">
+        <meta name="Description" content="">
+        <meta name="Keywords" content="">
+        <meta name="Author" content="">
+        <meta name="robots" content="ALL">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:site_name" content="">
+        <link rel="shortcut icon" href="" type="image/png"/>
+        <link rel="stylesheet" href="../../stylesheets/css/common.css">
+        <script src="../../javascripts/jquery-1.8.2.min.js"></script>
+    </head>
+    <body >
+        <!--<div class="guide_line">
+            <div class="guide_center"></div>
+        </div>-->
+        <div id="wrap">
+            <div class="page_wrap">
+                <div class="btn_align_left">
+                    <button type="button" class="btn_page_prev2">이전페이지로 이동</button>
+                </div>
+            </div>
+            <!-- container -->
+            <div class="mypage_wrap">
+                <div class="my_profile">
+                    <div class="title_wrap">
+                        <h2>내 정보 수정</h2>
+                    </div>
+                    <div class="my_profile_ui">
+                        <div class="picture_wrap">
+                            <!-- 등록된 사진이 있는 경우 -->
+                            <!--<span style="background-image:url(../../images/common/user.png)">프로젝트위키 123님의 사진</span>-->
+
+                            <!-- 등록된 사진이 없는 경우 -->
+                            <span>등록된 사진 없음</span>
+                        </div>
+                        <div class="info_wrap">
+                            <!--<em class="user_label label_normal">일반</em>-->
+                            <em class="user_label label_vip">VIP</em>
+                            <strong class="user_name">용산 골프왕</strong>
+                            <div class="user_info">
+                                <ul>
+                                    <li>31세</li>
+                                    <li>남</li>
+                                </ul>
+                                <ul>
+                                    <li>서울</li>
+                                    <li>평균 90타</li>
+                                    <li>2년</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form method="post" action="">
+                    <fieldset>
+                        <legend>내 정보 수정</legend>
+                        <div class="profile_modify">
+                            <div>
+                                <strong>기본정보</strong>
+                                <div class="photo">
+                                    <ul class="photo_list">
+                                        <!-- 등록된 사진이 없을경우 -->
+                                        <!--<li class="my_pick">
+                                            <div class="photo_box">
+                                                <button type="button" class="btn_add_photo">사진 추가</button>
+                                            </div>
+                                        </li>-->
+
+                                        <!-- 등록된 사진이 있을경우 (대표사진, 대표외 사진, 추가 사진등록) -->
+                                        <li class="my_pick">
+                                            <div class="photo_box" style="background-image:url(../../images/common/user.jpg)">
+                                                <button type="button" class="btn_delete_photo">사진 삭제</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="photo_box" style="background-image:url(../../images/common/user2.jpg)">
+                                                <button type="button" class="btn_delete_photo">사진 삭제</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="photo_box">
+                                                <button type="button" class="btn_add_photo">사진 추가</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="noti_wrap">
+                                        <div class="form_type03_2">
+                                            <input type="checkbox" id="check_secret" checked="">
+                                            <label for="check_secret">프로필 이미지 비공개</label>
+                                        </div>
+                                        <ul class="notification_type01">
+                                            <li>대표 프로필 사진은 필수이며, 최대 6장까지 등록이 가능해요.</li>
+                                            <li>프로필 이미지를 비공개 체크하면 다른 회원들에게는 사진이 공개되지 않아요. (섬네일 이미지는 작게 보여져요.)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="modify_forms">
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="txt_nickname" class="required">닉네임<em>필수입력</em></label></dt>
+                                            <dd><input type="text" name="" id="txt_nickname" placeholder="사용할 닉네임을 입력해주세요." value="프로젝트위키 123"></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="txt_age" class="required">나이<em>필수입력</em></label></dt>
+                                            <dd><input type="text" name="" id="txt_age" value="30세" disabled></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="txt_gender" class="required">성별<em>필수입력</em></label></dt>
+                                            <dd><input type="text" name="" id="txt_gender" value="남성" disabled></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02 form_phone">
+                                        <dl>
+                                            <dt><label for="txt_phone" class="required">휴대폰 번호<em>필수입력</em></label></dt>
+                                            <dd>
+                                                <input type="text" name="" id="txt_phone" value="010-1234-5678" disabled>
+                                                <button type="button" class="btn_default btn_type02">PASS 재인증</button>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_half">
+                                        <div class="form_type02">
+                                            <dl>
+                                                <dt><label for="sel_city" class="required">지역(시/도)<em>필수입력</em></label></dt>
+                                                <dd>
+                                                    <select name="" id="sel_city" class="validField">
+                                                        <option value="">시/도</option>
+                                                        <option value="" selected>서울시</option>
+                                                        <option value="">선택 2</option>
+                                                        <option value="">선택 3</option>
+                                                    </select>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <div class="form_type02">
+                                            <dl>
+                                                <dt><label for="sel_town" class="required">지역(시/군/구)<em>필수입력</em></label></dt>
+                                                <dd>
+                                                    <select name="" id="sel_town" class="validField">
+                                                        <option value="">시/군/구</option>
+                                                        <option value="" selected>용산구</option>
+                                                        <option value="">선택 2</option>
+                                                        <option value="">선택 3</option>
+                                                    </select>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>골프정보</strong>
+                                <div class="modify_forms">
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="average" class="required">평균 타수<em>필수입력</em></label></dt>
+                                            <dd>
+                                                <select name="" id="average" class="validField">
+                                                    <option value="">평균 타수를 선택해주세요</option>
+                                                    <option value="">싱글</option>
+                                                    <option value="">평균 80타</option>
+                                                    <option value="" selected>평균 90타</option>
+                                                    <option value="">평균 100타</option>
+                                                    <option value="">평균 110타</option>
+                                                    <option value="">평균 120타 이상</option>
+                                                </select>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="golf_career" class="required">골프 경력<em>필수입력</em></label></dt>
+                                            <dd>
+                                                <select name="" id="golf_career" class="validField">
+                                                    <option value="">골프 경력을 선택해주세요</option>
+                                                    <option value="" selected>2년</option>
+                                                    <option value="">선택 2</option>
+                                                    <option value="">선택 3</option>
+                                                </select>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="membership">보유 회원권 수</label></dt>
+                                            <dd>
+                                                <select name="" id="membership" class="validField">
+                                                    <option value="">보유 회원권 수를 선택해주세요</option>
+                                                    <option value="" selected>1개</option>
+                                                    <option value="">선택 2</option>
+                                                    <option value="">선택 3</option>
+                                                </select>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="golf_course">자주 가는 골프장</label></dt>
+                                            <dd><input type="text" name="" id="golf_course" placeholder="자주 가는 골프장을 입력해주세요" value="고양 컨트리클럽"></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="sel_rounding">월 평균 라운딩</label></dt>
+                                            <dd>
+                                                <select name="" id="sel_rounding" class="validField">
+                                                    <option value="">월 평균 라운딩 횟수를 선택하세요</option>
+                                                    <option value="" selected>2회</option>
+                                                    <option value="">선택 2</option>
+                                                    <option value="">선택 3</option>
+                                                </select>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="sel_rounding_overseas">월 평균 해외 라운딩</label></dt>
+                                            <dd>
+                                                <select name="" id="sel_rounding_overseas" class="validField">
+                                                    <option value="">월 평균 해외 라운딩 횟수를 선택하세요</option>
+                                                    <option value="" selected>1회 이하</option>
+                                                    <option value="">선택 2</option>
+                                                    <option value="">선택 3</option>
+                                                </select>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>자기소개</strong>
+                                <div class="form_type03">
+                                    <textarea name="" id="" placeholder="간단한 자기 소개를 통해 다른 회원들에게 자신을 소개 할 수 있어요.">안녕하세요 잘 부탁드립니다~!</textarea>
+                                    <span><em>17</em>/500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="btn_wrap btn_half">
+                        <a href="#" class="btn_default btn_type02">취소</a>
+                        <a href="#" class="btn_default btn_type01 btn_disabled">저장</a>
+                    </div>
+                </form>
+            </div>
+            <!-- //container -->
+            <script src="../../javascripts/plugin.js"></script>
+            <script src="../../javascripts/design_common.js"></script>
+        </div>
+    </body>
+</html>

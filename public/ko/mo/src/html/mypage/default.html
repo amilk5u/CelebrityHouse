@@ -1,0 +1,104 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+@@include("../../include/nav.html", {
+    "className" : "class='bg'",
+    "logo" : ""
+})
+            <!-- container -->
+            <div class="mypage_wrap">
+                <div class="my_profile bg">
+                    <div class="title_wrap">
+                        <h2>내 정보</h2>
+                        <a href="#" class="">편집</a>
+                    </div>
+                    <div class="my_profile_ui">
+                        <div class="picture_wrap">
+                            <!-- 등록된 사진이 있는 경우 -->
+                            <!--<span style="background-image:url(../../images/common/user.png)">프로젝트위키 123님의 사진</span>-->
+
+                            <!-- 등록된 사진이 없는 경우 -->
+                            <span>등록된 사진 없음</span>
+                        </div>
+                        <div class="info_wrap">
+                            <em class="user_label label_normal">일반</em>
+                            <!--<em class="user_label label_vip">VIP</em>-->
+                            <strong class="user_name">프로젝트위키 123</strong>
+                            <div class="user_info">
+                                <ul>
+                                    <li>30세</li>
+                                    <li>남</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="status_wrap">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <strong>0</strong>
+                                <span>조인모집</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <strong>0</strong>
+                                <span>조인신청</span>
+                            </a>
+                        </li>
+
+                        <!-- 기본형 -->
+                        <li>
+                            <a href="#">
+                                <strong>2</strong>
+                                <span>조인매칭</span>
+                            </a>
+                        </li>
+                        <!-- 결제필요시 노출 -->
+                        <!--<li class="pay_noti">
+                            <a href="#">
+                                <strong>56</strong>
+                                <span>조인매칭</span>
+                            </a>
+                            <p>결제를 완료해주세요.</p>
+                        </li>-->
+                    </ul>
+                </div>
+                <div class="profile_details">
+                    <div class="info_type01">
+                        <strong>기본정보</strong>
+                        <ul class="info_list">
+                            <!-- 데이터가 있을경우, strong 태그에다가 데이터 넣어주세요 -->
+                            <li><span>닉네임</span><strong>프로젝트위키 123</strong></li>
+                            <li><span>나이</span><strong>30세</strong></li>
+                            <li><span>성별</span><strong>남자</strong></li>
+                            <li><span>휴대폰 번호</span><strong>010-1234-5678</strong></li>
+
+                            <!-- 데이터가 없는 경우 -->
+                            <li><span>지역</span>거주 지역을 설정해주세요.</li>
+                        </ul>
+                    </div>
+                    <div class="info_type02">
+                        <strong>골프정보</strong>
+                        <ul class="info_list">
+                            <li><span>평균 타수</span>-</li>
+                            <li><span>골프 경력</span>-</li>
+                            <li><span>보유 회원권 수</span>-</li>
+                            <li><span>자주 가는 골프장</span>-</li>
+                            <li><span>월 평균 라운딩</span>-</li>
+                            <li><span>월 평균 해외 라운딩</span>-</li>
+                        </ul>
+                    </div>
+                    <div class="info_type03">
+                        <strong>자기소개</strong>
+                        <p>-</p>
+                    </div>
+                </div>
+            </div>
+            <!-- //container -->
+@@include("../../include/bottomBar.html")
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})

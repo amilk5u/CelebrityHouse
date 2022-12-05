@@ -1,0 +1,30 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+            <!-- container -->
+            <button type="button" class="match_btn">매칭 요청 자동 취소 안내 Click Me!</button>
+            <!-- 조인 매칭 요청 취소 확인 팝업 -->
+            <div class="popup_match_wrap">
+                <div class="content_wrap">
+                    <div class="popup_title_wrap">
+                        <strong>매칭 요청 자동 취소 안내</strong>
+                        <button type="button" class="btn_popup_close">닫기</button>
+                    </div>
+                    <div class="popup_cont_wrap">
+                        <p>
+                            동반 라운딩 인원이 모두 확정된 상태에서 24시간 이내에 결제가 완료되지 않아 매칭 요청이 자동 취소되었습니다.<br><br>
+                            미결제로 인해 매칭 요청이 자동 취소되었으므로 회원님은 서비스 정책에 따라 15일간 매칭 서비스 이용이 제한됩니다.
+                        </p>
+                    </div>
+                    <div class="btn_wrap btn_half">
+                        <button type="button" class="btn_default btn_type02">취소</button>
+                        <button type="button" class="btn_default btn_type01">확인</button>
+                    </div>
+                </div>
+                <p class="dimmed"></p>
+            </div>
+            <!-- //container -->
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})

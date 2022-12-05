@@ -1,0 +1,189 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+            <div class="page_wrap">
+                <div class="btn_align_left">
+                    <button type="button" class="btn_page_prev2">이전페이지로 이동</button>
+                </div>
+            </div>
+            <!-- container -->
+            <div class="mypage_wrap">
+                <div class="sub_title_wrap">
+                    <h2>기간제 멤버십 구매하기</h2>
+                </div>
+
+                <div class="fixed_term">
+                    <div class="payment_detail">
+                        <div class="cont_wrap">
+                            <div class="payment_info">
+                                <strong>결제 정보 확인</strong>
+                                <div class="buy buy_1month">
+                                    <p>VIP 멤버십 1개월권 (1명 x 30일)</p>
+                                    <span><em>100,000</em>원</span>
+                                </div>
+                                <!--<div class="buy buy_6month">
+                                    <p>VIP 멤버십 6개월권 (1명 x 180일)</p>
+                                    <span><em>550,000</em>원</span>
+                                </div>-->
+                                <!--<div class="buy buy_1year">
+                                    <p>VIP 멤버십 1년권 (1명 x 365일)</p>
+                                    <span><em>1,000,000</em>원</span>
+                                </div>-->
+                                <div class="info">
+                                    <dl>
+                                        <dt>구매자명</dt>
+                                        <dd>홍길동</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>구매자 연락처</dt>
+                                        <dd>010-6319-8159</dd>
+                                    </dl>
+                                </div>
+
+                                <!-- 셀럽 페이 기본 -->
+                                <div class="form_type02">
+                                    <dl>
+                                        <dt><label for="txt_pay">셀럽페이 사용</label></dt>
+                                        <dd><input type="text" name="" id="txt_pay" placeholder="100원 이상 입력해주세요"></dd>
+                                    </dl>
+                                </div>
+                                <!-- 셀럽 페이 (입력중) -->
+                                <!--<div class="form_type02">
+                                    <dl>
+                                        <dt><label for="txt_pay">셀럽페이 사용</label></dt>
+                                        <dd><input type="text" name="" id="txt_pay" value="30원" placeholder="100원 이상 입력해주세요"></dd>
+                                    </dl>
+                                </div>-->
+                                <!-- 셀럽 페이 오류 시 활성화 -->
+                                <!--<div class="form_type02">
+                                    <dl class="error_msg">
+                                        <dt><label for="txt_pay">셀럽페이 사용</label></dt>
+                                        <dd><input type="text" name="" id="txt_pay" value="30원" placeholder="100원 이상 입력해주세요"></dd>
+                                    </dl>
+                                    <span>100원 이상부터 사용이 가능합니다.</span>
+                                </div>-->
+                                <p class="notification_type02">보유 셀럽페이 <span><em>13,050</em>원</span></p>
+                            </div>
+                            <div class="price">
+                                <strong>총 결제금액</strong>
+                                <div>
+                                    <p><span>100,000</span>원</p>
+                                    <em>(VAT포함)</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="membership_field_wrap">
+                        <!-- 추천인 코드 입력 전 기본 상태 -->
+                        <!--<div class="form_type02">
+                            <dl>
+                                <dt><label for="form_type02_text"><strong>추천인 코드 입력(선택)</strong></label></dt>
+                                <dd><input type="text" name="" id="form_type02_text" placeholder="추천인 코드를 입력해주세요"></dd>
+                            </dl>
+                        </div>-->
+                        <!-- 추천인 코드가 유효할 시 -->
+                        <div class="form_type02">
+                            <dl class="correct_msg">
+                                <dt><label for="form_type02_correct"><strong>추천인 코드 입력(선택)</strong></label></dt>
+                                <dd><input type="text" name="" id="form_type02_correct" placeholder="추천인 코드를 입력해주세요" value="CVZ64Z72"></dd>
+                            </dl>
+                            <span>유효한 코드입니다.</span>
+                        </div>
+                        <!-- 추천인 코드가 유효하지 않을 시 -->
+                        <!--<div class="form_type02">
+                            <dl class="error_msg">
+                                <dt><label for="form_type02_error"><strong>추천인 코드 입력(선택)</strong></label></dt>
+                                <dd><input type="text" name="" id="form_type02_error" value="CVZ64Z72" placeholder="추천인 코드를 입력해주세요"></dd>
+                            </dl>
+                            <span>유효하지 않은 추천인 코드입니다.</span>
+                        </div>-->
+                        <p class="notification_type02">추천인 코드를 입력하면 추천인과 함께 다양한 혜택을 받아볼 수 있어요.</p>
+                    </div>
+                    <div class="payment_type">
+                        <strong>결제 수단</strong>
+                        <div class="cont_wrap">
+                            <ul class="tab_menu">
+                                <li><button type="button">신용카드</button></li>
+                                <li class="active"><button type="button">계좌이체</button></li>
+                            </ul>
+                            <div class="tab_contents">
+                                <div class="cont_credit" style="display:none;">
+                                    <div class="form_type02">
+                                        <div>
+                                            <select name="" id="sel_company">
+                                                <option value="">카드사를 선택해주세요</option>
+                                                <option value="">선택 1</option>
+                                                <option value="">선택 2</option>
+                                                <option value="">선택 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cont_transfer" style="display:block;">
+                                    <div class="form_type03_2">
+                                        <input type="checkbox" id="chk_receipt" checked>
+                                        <label for="chk_receipt">현금 영수증 신청</label>
+                                    </div>
+                                    <div class="receipt_wrap">
+                                        <div class="receipt_type">
+                                            <div class="form_type03_1">
+                                                <input type="radio" id="receiptType_1" name="receiptType" checked>
+                                                <label for="receiptType_1">개인 소득 공제</label>
+                                            </div>
+                                            <div class="form_type03_1">
+                                                <input type="radio" id="receiptType_2" name="receiptType">
+                                                <label for="receiptType_2">사업자 지출 증빙</label>
+                                            </div>
+                                        </div>
+                                        <div class="receipt_info">
+                                            <div class="form_type02">
+                                                <div>
+                                                    <select name="" id="sel_receiptType" class="vaildFiled">
+                                                        <option value="">선택하세요</option>
+                                                        <option value="" selected>휴대폰 번호</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form_type02">
+                                                <div>
+                                                    <input type="text" placeholder="-를 제외하고 입력해주세요">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment_terms">
+                        <div class="form_type03_2">
+                            <input type="checkbox" id="chk_all">
+                            <label for="chk_all">약관 전체 동의</label>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="form_type03_1">
+                                    <input type="checkbox" id="chk_service">
+                                    <label for="chk_service">(필수) 서비스 이용약관</label>
+                                    <a href="#">서비스 이용약관 바로가기</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form_type03_1">
+                                    <input type="checkbox" id="chk_privacy">
+                                    <label for="chk_privacy">(필수) 개인정보 수집 및 이용 동의</label>
+                                    <a href="#">개인정보 수집 및 이용 동의 바로가기</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btn_wrap">
+                    <button type="button" class="btn_default btn_type04" disabled>결제하기</button>
+                </div>
+            </div>
+            <!-- //container -->
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})
