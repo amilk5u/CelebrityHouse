@@ -100,11 +100,12 @@
             ul { width: vw(640); margin: 0 auto; @extend %clearfix; }
             li { width: 50%; float: left; @include boxSizing; position: relative; }
             button {
-               width: 100%; display: block; position: relative; padding: vw(30) 0; text-align: center; font-weight: $medium; font-size: vw(28);
-                color: $black; z-index: 1;
+               width: 100%; display: block; position: relative; padding: vw(30) 0; text-align: center; font-weight: $regular; font-size: vw(28);
+               color: $gray7; z-index: 1;
                @include boxSizing;
                &:after { width: 100%; height: vw(4); content: ""; background-color: $gray9; position: absolute; bottom: 0; left: 0; display: none; }
                &.is_open {
+                  color: $gray9; font-weight: $medium; 
                   &:after { display: block; }
                }
             }
@@ -200,7 +201,7 @@
       .comments_profile_ui {
         display:flex; align-items: center;
         .picture_wrap {
-          width:vw(80); margin:0 vw(32) 0 0; position:relative;
+          width:vw(80); margin:0 vw(24) 0 0; position:relative;
           span { display:block; width:vw(80); height:vw(80); text-indent:-99999px; background:url(../../images/common/no_image.svg) no-repeat 50% 50% $gray1; background-size:cover; border-radius:100%; overflow:hidden;}
         }
         .user_name_wrap {
@@ -266,7 +267,7 @@
     }
     .review_photo_slide {
       position:relative; overflow: hidden; margin:vw(34) 0 0;
-      .swiper-slide { width:vw(160); margin:0 vw(10) 0 0; padding:0; border-radius:vw(10); overflow:hidden; }
+      .swiper-slide { width:vw(160); padding:0; border-radius:vw(10); overflow:hidden; }
       .swiper-slide img { width:100%; }
       .swiper-button-next, .swiper-button-prev {
         width:vw(65); height:vw(64); margin:0;
@@ -283,8 +284,8 @@
       }
     }
     .review_big_photo_slide {
-      position:relative; overflow: hidden; margin:vw(34) 0 0;
-      .swiper-slide { width:100%; margin:0; padding:0; border-radius:vw(15); overflow:hidden; }
+      position: relative; overflow: hidden; margin: vw(34) 0 0; border-radius: vw(15);
+      .swiper-slide { width:100%; margin:0; padding:0; overflow:hidden; border-radius: vw(15); }
       .swiper-slide img { width:100%; }
       .swiper-button-next, .swiper-button-prev {
         width:vw(65); height:vw(64); margin:0;
@@ -300,15 +301,16 @@
         @include transform(translate(0, -50%) rotate(180deg));
       }
       .review_pagination {
-         width: vw(73); height: vw(48); position: absolute; left: auto; bottom: auto; right: vw(25); top: vw(25); 
-         line-height: vw(50);
-         font-size: vw(24); font-weight: $semi-bold; z-index: 1; background-color: rgba(1, 5, 9, .2); text-align: center; color: $white;
+         width: auto; height: vw(48); padding:0 vw(15); position: absolute; left: auto; bottom: auto; right: vw(25); top: vw(25); 
+         line-height: vw(50); font-size: vw(24); font-weight: $semi-bold; z-index: 1; background-color: rgba(1, 5, 9, .2); text-align: center; color: $white;
+         .swiper-pagination-current { position: relative; left:vw(4); }
+         .swiper-pagination-total { position: relative; left:vw(-4); }
          @include boxSizing;
          @include borderRadius(vw(30));
       }
     }
     .comments_cont_wrap {
-      padding:vw(30) 0 0; font-size:vw(26); line-height:vw(40); letter-spacing:vw(-0.6);
+      padding:vw(24) 0 0; font-size:vw(26); line-height:vw(40); letter-spacing:vw(-0.6);
       p { color:$gray7; word-break:break-word; }
       span { display:inline-block; padding:vw(16) 0 0; color:$gray4; }
       em { font-weight:$bold; color:$gray9; }
@@ -388,11 +390,12 @@
       ul { width: vw(640); margin: 0 auto; @extend %clearfix; }
       li { width: 50%; float: left; @include boxSizing; position: relative; }
       button {
-         width: 100%; display: block; position: relative; padding: vw(30) 0; text-align: center; font-weight: $medium; font-size: vw(28);
-          color: $black; z-index: 1;
+         width: 100%; display: block; position: relative; padding: vw(30) 0; text-align: center; font-weight: $regular; font-size: vw(28);
+          color: $gray7; z-index: 1;
          @include boxSizing;
          &:after { width: 100%; height: vw(4); content: ""; background-color: $gray9; position: absolute; bottom: 0; left: 0; display: none; }
          &.is_open {
+            color: $gray9; font-weight: $medium; 
             &:after { display: block; }
          }
       }
@@ -408,7 +411,7 @@
     > .comments_profile_ui {
       display:flex; align-items: center;
       .picture_wrap {
-        width:vw(80); margin:0 vw(32) 0 0; position:relative;
+        width:vw(80); margin:0 vw(24) 0 0; position:relative;
         span { display:block; width:vw(80); height:vw(80); text-indent:-9999px; background:url(../../images/common/no_image.svg) no-repeat 50% 50% $gray1; background-size:cover; border-radius:100%; overflow:hidden;}
       }
       .user_name_wrap {
@@ -476,8 +479,8 @@
         }*/
       }
       .swiper {
-         position:relative; overflow: hidden; margin:vw(34) 0 0;
-         .swiper-slide { margin:0 vw(10) 0 0; background-position:center; background-size:100% auto; background-repeat:no-repeat; border-radius:vw(10); overflow:hidden; }
+         position: relative; overflow: hidden; margin: vw(34) 0 0; border-radius: vw(15);
+         .swiper-slide { background-position:center; background-size:100% auto; background-repeat:no-repeat; overflow:hidden; }
          .swiper-button-next, .swiper-button-prev {
             width:vw(65); height:vw(64); margin:0;
             &.swiper-button-disabled { @include opacity(0) }
@@ -491,6 +494,14 @@
             left:vw(20); background:url(../../images/common/btn_slide_arr.svg) center/cover no-repeat;
             @include transform(translate(0, -50%) rotate(180deg));
          }
+         .review_pagination {
+            width: auto; height: vw(48); padding:0 vw(15); position: absolute; left: auto; bottom: auto; right: vw(25); top: vw(25); 
+            line-height: vw(50); font-size: vw(24); font-weight: $semi-bold; z-index: 1; background-color: rgba(1, 5, 9, .2); text-align: center; color: $white;
+            .swiper-pagination-current { position: relative; left:vw(4); }
+            .swiper-pagination-total { position: relative; left:vw(-4); }
+            @include boxSizing;
+            @include borderRadius(vw(30));
+         }
       }
       .silde_photo_wrap {
         .swiper-slide { width: vw(160); height: vw(160); }
@@ -499,7 +510,7 @@
         .swiper-slide { width: 100%; height: vw(640); }
       }
       .comments_cont_wrap {
-        padding:vw(30) 0 0; font-size:vw(26); line-height:vw(40); letter-spacing:vw(-0.6);
+        padding:vw(24) 0 0; font-size:vw(26); line-height:vw(40); letter-spacing:vw(-0.6);
         p { color:$gray7; word-break:break-word; }
         span { display:inline-block; padding:vw(16) 0 0; color:$gray4; }
       }
