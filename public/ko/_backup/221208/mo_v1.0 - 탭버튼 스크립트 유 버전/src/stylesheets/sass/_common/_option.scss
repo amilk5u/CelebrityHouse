@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+/* Font style setting */
+$NotosansKR:"SUIT", "Noto Sans KR", Arial, Apple SD Gothic Neo, sans-serif;
+$SUIT:"SUIT", Arial, Apple SD Gothic Neo, sans-serif;
+
+/* Point color setting */
+$black:#000;
+$white:#fff;
+
+$green3:#0b735a;
+$green2:#008a69;
+$green1:#00a789;
+$green05:#e0f4f0;
+$violet2:#840bcd;
+$violet1:#9c04fa;
+$violet05:#ddcae7;
+$red:#f02121;
+$red05:#fef2f2;
+$blue:#00a0ff;
+$pink:#e71a57;
+
+$gray9:#010509;
+$gray8:#323538;
+$gray7:#616569;
+$gray6:#717578;
+$gray5:#919599;
+$gray4:#c1c5c9;
+$gray3:#d1d5d9;
+$gray2:#e4e7ec;
+$gray1:#f5f6f7;
+$gray05:#f2f5f8;
+
+/* Background - color setting */
+$bg-black:$black;
+$bg-gray1:$gray4;
+$bg-gray2:$gray2;
+$bg-gray3:$gray1;
+$bg-gray4:$gray05;
+
+/* Border - color setting */
+$bd-black:$black;
+$bd-gray1:$gray7;
+$bd-gray2:$gray4;
+$bd-gray3:$gray2;
+
+/* Font - color setting */
+$txt-black:$black;
+$txt-gray1:$gray9;
+$txt-gray2:$gray7;
+
+/* Input - color setting */
+$inp-bd-base:$gray1;
+
+/* Button - color setting */
+$btn-black:$black;
+
+/**
+ * BASE SETTING
+ */
+$base-font: $NotosansKR;
+$base-font-size:20px;
+$base-font-color:$black;
+
+$letter-spacing:0;
+
+$light:300;
+$regular:400;
+$medium:500;
+$semi-bold:600;
+$bold:700;
+$extra-bold:800;

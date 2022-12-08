@@ -1,0 +1,59 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+            <div class="page_wrap">
+                <div class="btn_align_left">
+                    <button type="button" class="btn_page_prev2">이전페이지로 이동</button>
+                </div>
+            </div>
+            <!-- container -->
+            <div class="mypage_wrap">
+                <div class="sub_title_wrap">
+                    <h2>회원 탈퇴하기</h2>
+                </div>
+                <form action="">
+                    <fieldset class="withdrawal_wrap">
+                        <legend>회원 탈퇴하기</legend>
+                        <div class="withdrawal_txt">
+                            <div class="withdrawal_title">프로젝트위키 123님은 <em class="level normal">일반 회원</em> 이에요!</div>
+                            <!--<div class="withdrawal_title">프로젝트위키 123님은 <em class="level vip">VIP</em> 이에요!</div>-->
+                            <!--<div class="withdrawal_title">프로젝트위키 123님은 <em class="level celeb">셀럽 회원</em> 이에요!</div>-->
+                            <span>* 멤버십 이용기간이 남은 경우 회원 탈퇴가 불가능합니다.</span>
+                        </div>
+                        <div class="withdrawal_info">
+                            <div class="form_type02">
+                                <dl>
+                                    <dt><label for="txt_email">이메일</label></dt>
+                                    <dd><input type="text" name="" id="txt_email" value="gildong@naver.com" disabled=""></dd>
+                                </dl>
+                            </div>
+                            <div class="form_type02">
+                                <dl>
+                                    <dt><label for="txt_phohe">휴대폰 번호</label></dt>
+                                    <dd><input type="text" name="" id="txt_phohe" value="010-6319-8159" disabled=""></dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="withdrawal_again">
+                            <div class="form_type02">
+                                <dl>
+                                    <dt><label for="txt_email2">이메일</label></dt>
+                                    <dd><input type="text" name="" id="txt_email2" placeholder="회원님의 이메일을 다시 한번 입력해주세요" value="gildong@naver.com"></dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="btn_wrap">
+                    <div class="form_type03_2 withderwal_chk_wrap">
+                        <input type="checkbox" id="withderwal_chk" checked>
+                        <label for="withderwal_chk">회원 탈퇴 및 이용약관에 동의합니다.</label>
+                    </div>
+                    <a href="#" class="btn_default btn_type01">회원 탈퇴하기</a>
+                </div>
+            </div>
+            <!-- //container -->
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})

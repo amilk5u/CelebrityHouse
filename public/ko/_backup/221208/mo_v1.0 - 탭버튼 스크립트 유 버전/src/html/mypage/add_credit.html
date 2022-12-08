@@ -1,0 +1,43 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+            <div class="page_wrap">
+                <div class="btn_align_left">
+                    <button type="button" class="btn_page_prev2">이전페이지로 이동</button>
+                </div>
+            </div>
+            <!-- container -->
+            <div class="mypage_wrap">
+                <div class="sub_title_wrap">
+                    <h2>멤버십 가입하기</h2>
+                </div>
+                <div class="membership_list_wrap">
+                    <strong>신용카드 등록</strong>
+                    <form action="">
+                        <fieldset class="credit_list">
+                            <legend>신용카드 등록</legend>
+                            <div class="form_type01">
+                                <div>
+                                    <input type="text" name="" id="txt_credit" placeholder="0000  -  0000  -  0000  -  0000">
+                                    <label for="txt_credit">카드번호 입력</label>
+                                </div>
+                            </div>
+                            <div class="form_type01">
+                                <div>
+                                    <input type="text" name="" id="txt_expiry_date" placeholder="MM / YY">
+                                    <label for="txt_expiry_date">만료일</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="btn_wrap_fix btn_half">
+                    <a href="#" class="btn_default btn_type02">이전</a>
+                    <a href="#" class="btn_default btn_type04 btn_disabled">다음</a>
+                </div>
+            </div>
+            <!-- //container -->
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})

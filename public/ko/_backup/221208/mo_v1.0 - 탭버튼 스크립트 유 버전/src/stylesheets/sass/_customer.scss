@@ -1,0 +1,256 @@
+@charset "UTF-8";
+
+/* 알림 설정 */
+.setting_wrap {
+  padding:0 vw(40); letter-spacing:vw(-0.6);
+  .announcement { padding:vw(26) 0; margin:vw(50) 0; font-size:vw(24); line-height:vw(35); text-align:center; border-radius:vw(16); background-color:$gray05; }
+  .marketing_wrap {
+    position:relative;
+    strong { font-size:vw(30); line-height:vw(64); font-weight:$semi-bold; }
+    > div {
+      width:vw(88); height:vw(54); position:absolute; top:50%; right:0; border-radius:vw(50); background-color:$gray4;
+      @include transition(all, .3s, ease);
+      @include translate(0, -50%);
+      > button { width:vw(48); height:vw(48); position:absolute; top:0; left:0; margin:vw(3); background-color:$white; border-radius:50%; text-indent:-9999px; }
+      &.active {
+        background-color:$green1;
+        > button { left:inherit; right:0; }
+      }
+    }
+  }
+}
+
+/* 알림 목록 */
+.alarm_tap {
+  width:100%; position:fixed; letter-spacing:vw(-0.6);
+  ul {
+    display:flex; padding:vw(30) vw(40) 0; background-color:$white;
+    li {
+      width:calc(100% / 3); position:relative; text-align:center;
+      a { display:block; font-size:vw(30); line-height:vw(44); padding:vw(27) 0; color:$gray7; }
+      &.active {
+        font-weight:$semi-bold; color:$gray9;
+        a { color:$gray9; }
+        &:after { width:100%; height:vw(4); content:""; position:absolute; bottom:0; left:0; background-color:$gray9; z-index:1; }
+      }
+    }
+  }
+  &:after { width:100%; height:vw(2); content:""; position:absolute; bottom:0; left:0; background-color:$gray2; }
+}
+.alarm_wrap {
+  .alarm_list {
+    padding:vw(128) vw(40) 0; letter-spacing:vw(-0.6);
+    li {
+      border-bottom:vw(2) solid $gray05;
+      a {
+        padding:vw(40) 0; display:block;
+        strong { display:block; font-size:vw(28); line-height:vw(42); font-weight:$medium; }
+        em { font-weight:$bold; }
+        span { display:block; padding:vw(12) 0 0; font-size:vw(24); line-height:vw(30); color:$gray4; }
+      }
+    }
+  }
+  /* 알림 상세 */
+  .alarm_view {
+    padding:0 vw(40);
+    .title_wrap {
+      padding:vw(40) 0; border-bottom:vw(2) solid $gray05;
+      strong { display:block; font-size:vw(36); line-height:vw(48);font-weight:$semi-bold; }
+      span { display:block; padding:vw(28) 0 0; font-size:vw(24); line-height:vw(30); color:$gray5; letter-spacing:vw(-1); }
+    }
+    .view_wrap {
+      padding:vw(42) 0;
+      img { max-width:100%; }
+    }
+  }
+}
+
+/* 고객센터 */
+.customer_wrap {
+  letter-spacing:vw(-0.6); padding:vw(60) 0 0;
+  .sub_title_wrap {
+    padding:0 vw(40) vw(74); position:relative; background-color:$white;
+    h2 { color:$gray9; font-size:vw(40); line-height:vw(64); font-weight:$semi-bold; }
+  }
+  .cont_wrap {
+    padding:0 vw(40);
+    p {
+      font-size:vw(28); line-height:vw(44); font-weight:$medium;
+      strong { font-weight:$bold; color:$green1; }
+    }
+    > div {
+      padding:vw(44) 0 0;
+      a {
+        display:flex; justify-content:center; padding:vw(44) 0 vw(36); margin:0 0 vw(16); border-radius:vw(20);
+        span {
+          display:inline-block; position:relative; padding:0 0 0 vw(56); line-height:vw(40);
+          &:before { width:vw(40); height:vw(40); content:""; position:absolute; top:0; left:0; background-position:left center; background-repeat:no-repeat; background-size:contain; }
+        }
+        &:last-child { margin:0; }
+      }
+      .call_btn {
+        padding:vw(40) 0; background-color:$green1;
+        span {
+          font-size:vw(32); font-weight:$semi-bold; color:$white; letter-spacing:0;
+          &:before { background-image:url(../../images/common/icon_tel_white.svg);  }
+        }
+      }
+      .kakao_btn {
+        background-color:#fae100;
+        span {
+          font-size:vw(28); font-weight:$semi-bold;
+          &:before { background-image:url(../../images/common/icon_kakao.svg);  }
+        }
+      }
+    }
+  }
+}
+
+/* 서비스 이용약관 */
+.terms_service_wrap {
+  padding:vw(50) vw(40) vw(120);
+  .service_title { padding:0 0 vw(50); font-size:vw(44); line-height:vw(64); font-weight:$semi-bold; letter-spacing:vw(-0.6); }
+  .service_cont { color:$gray5; font-size:vw(24); line-height:vw(38); letter-spacing:vw(-0.6); }
+}
+
+/* 채팅 */
+.chat_wrap {
+  letter-spacing:vw(-0.6);
+  .sub_title_wrap {
+    padding:0 vw(40) vw(50); position:relative; background-color:$white;
+    h2 { color:$gray9; font-size:vw(40); line-height:vw(64); font-weight:$semi-bold; }
+  }
+
+  /* 채팅 목록 */
+  .chat_list_wrap {
+    padding:0 vw(40) vw(120);
+    .notification_type05 { color:$black; margin:0 0 vw(30); }
+    li { border-bottom:vw(2) solid $gray05 }
+    a { display:flex; padding:vw(36) vw(135) vw(36) 0; position:relative; }
+    .profile_wrap {
+      width:vw(96); height:vw(96); position:relative; margin:0 vw(24) 0 0;
+      span { display:block; text-indent:-9999px; background-size:cover; background-position:50% 50%; background-repeat:no-repeat; /*border-radius:vw(26);*/ border-radius:100%; }
+      &.profile_type01 span { width:vw(96); height:vw(96); /*border-radius:vw(20);*/ }
+      &.profile_type02 {
+        span { width:vw(60); height:vw(60); border:vw(5) solid $white; position:absolute; }
+        span:nth-of-type(1) { top:vw(-5); left:vw(-5); }
+        span:nth-of-type(2) { bottom:vw(-5); right:vw(-5); }
+      }
+      &.profile_type03 {
+        span { width:vw(52); height:vw(52); border:vw(5) solid $white; position:absolute; }
+        span:nth-of-type(1) { bottom:vw(-5); right:vw(-5); }
+        span:nth-of-type(2) { bottom:vw(-5); left:vw(-5); }
+        span:nth-of-type(3) { top:vw(-5); left:50%; margin:0 0 0 vw(-28.5) }
+      }
+    }
+    .txt_wrap {
+      width:calc(100% - 16.66667vw);
+      p { position:relative; padding:0 vw(70) 0 0; }
+      strong { width:100%; font-size:vw(28); line-height:vw(41); color:$gray9; display:block; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; font-weight:$medium; }
+      em { display:block; color:$gray7; margin:vw(-18) 0 0; font-size:vw(20); padding:vw(9) vw(9) vw(5); font-weight:$semi-bold; background-color:$gray1; border-radius:vw(10); position:absolute; top:50%; right:0; }
+      span { width:100%; margin:vw(10) 0 0; font-size:vw(24); line-height:vw(35); color:$gray5; display:block; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; }
+    }
+    .msg_time { color:$gray4; font-size:vw(22); position:absolute; top:vw(44); right:0; }
+    .msg_badge { width:vw(36); line-height:vw(36); text-align:center; font-size:vw(20); font-weight:$bold; display:block; position:absolute; bottom:vw(46); right:0; color:$white; }
+    .msg_badge:after { width:100%; height:100%; position:absolute; top:vw(-1); left:0; content:""; background-color:$green1; border-radius:100%; z-index:-1; }
+    .no_list {
+      padding:vw(288) 0 vw(148); text-align:center;
+      span { color:$gray5; font-size:vw(26); display:block; padding:vw(278) 0 0; position:relative; }
+      span:before { width:vw(298); height:vw(228); margin:0 0 0 vw(-149); content:""; background:url(../../images/customer/chat_list_none.svg) no-repeat 50% 50%; background-size:cover; position:absolute; top:0; left:50%; }
+    }
+  }
+
+  /* 채팅 상세 */
+  .chat_view_wrap {
+    .chat_view { padding:vw(20) vw(40); box-sizing:border-box; flex-direction: column-reverse; display: flex; }
+    .info_wrap {
+      border-radius:vw(16); background-color:$gray05; padding:vw(30); margin:0 0 vw(60) !important;
+      p { font-size:vw(24); line-height:vw(38); color:$gray5; margin:0 0 vw(32); }
+      ul { padding:0 vw(20) }
+      li { margin:vw(12) 0 0; font-size:vw(24); line-height:vw(38); padding:0 0 0 vw(108); position:relative; }
+      li:first-child { margin:0; }
+      li:before { width:vw(8); height:vw(8); content:""; position:absolute; top:vw(14); left:0; background-color:$gray5; border-radius:100%; }
+      span { position:absolute; top:0; left:vw(22); color:$gray5; }
+    }
+    .chat_history {
+      margin:0 0 auto;
+      //> div { margin:vw(24) 0 0 }
+      //> div:first-child { margin:0; }
+      > div { margin:0 0 vw(24) }
+      > div:last-child { margin:0; }
+      .user_msg { display:flex; }
+      .photo_wrap { display:block; width:vw(60); height:vw(60); /*border-radius:vw(20);*/border-radius:100%; text-indent:-9999px; margin:0 vw(12) 0 0; background:url(../../images/common/no_image.svg) no-repeat 50% 50% $gray1; background-size:cover; }
+      .msg_wrap {
+        box-sizing:border-box; position:relative;
+        strong { display:block; font-size:vw(24); font-weight:$semi-bold; line-height:vw(32); margin:0 0 vw(14) }
+        div { padding:vw(22) vw(30) vw(18); font-size:vw(24); line-height:vw(36); display:inline-block; text-align:left; position:relative; word-break:break-word; }
+        p { position:absolute; bottom:vw(10); line-height:100%; width:vw(100) }
+        em { display:block; color:$gray5; font-size:vw(22); font-weight:$medium; }
+        span { display:block; color:$gray4; font-size:vw(20); margin:vw(5) 0 0; }
+      }
+
+      .user_msg .msg_wrap {
+        width:calc(100% - 10vw); padding:0 vw(108) 0 0;
+        div { border-radius:0 vw(20) vw(20) vw(20); }
+        p { /*left:vw(468);*/ right:vw(-108); }
+      }
+      .my_msg .msg_wrap {
+        width:100%; padding:0 0 0 vw(180); text-align:right;
+        div { border-radius:vw(20) 0 vw(20) vw(20); }
+        p { /*left:vw(87);*/ left:vw(-108); text-align:right; }
+      }
+
+      .user_type_normal .msg_wrap div { background-color:#e6f6f3; }
+      .user_type_celeb .msg_wrap div { background-color:#fde8ee; }
+      .user_type_vip .msg_wrap div { background-color:#f3e7fa; }
+
+      .user_msg {
+        .msg_wrap strong { padding:0 0 0 vw(40); position:relative; }
+        .msg_wrap strong:before { width:vw(32); height:vw(32); content:""; position:absolute; top:0; left:0; background-size:cover; background-repeat:no-repeat; background-position:50% 50%; }
+        &.user_type_normal .msg_wrap {
+          strong { padding:0; }
+        }
+        &.user_type_celeb .msg_wrap {
+          strong:before { background-image:url(../../images/member/icon_badge_celeb.svg); }
+        }
+        &.user_type_vip .msg_wrap {
+          strong:before { background-image:url(../../images/member/icon_badge_vip.svg); }
+        }
+      }
+    }
+
+    /* 채팅 입력 */
+    .chat_write {
+      padding:vw(20) vw(40) vw(40); background-color:$white; box-sizing:border-box;
+      @include transition();
+      .write_frm {
+        position:relative; font-size:0; z-index:2;
+        textarea {
+          width:100%; height:vw(80); overflow-y:hidden; font-size:vw(26); line-height:vw(40); font-weight:$medium; border:vw(2) solid $gray1; background-color:$gray1; padding:vw(20) vw(140) vw(20) vw(30); box-sizing:border-box; border-radius:vw(20);
+          &::-webkit-input-placeholder { color: $gray4; } /* Edge */
+          &:-ms-input-placeholder { color: $gray4; } /* Internet Explorer 10-11 */
+          &::placeholder { color: $gray4; }
+          &:focus { outline:none; }
+          @include transition();
+        }
+        .btn_write { font-size:vw(24); padding:vw(16) vw(20) vw(12); background-color:$gray1; color:$gray9; position:absolute; bottom:vw(26); right:vw(30); visibility:hidden; border-radius:vw(10); font-weight:$medium; }
+        .btn_write:disabled { background-color:$gray2; color:$gray4; }
+      }
+
+      &.keyup { padding:vw(20) vw(40) vw(40) }
+      &.keyup textarea { height:vw(120); overflow-y:auto; border-color:$gray9; background-color:$white; }
+      &.keyup .btn_write { visibility:visible; }
+
+      &.active { padding:vw(20) vw(40) vw(40) }
+      &.active textarea { height:vw(120); overflow-y:auto; border-color:$gray9; background-color:$white; }
+      &.active .btn_write { visibility:visible; }
+    }
+  }
+}
+
+/* 채팅 상세페이지 컨텐츠 고정 */
+//.scroll_hidden .chat_view { width:100%; height:calc(100% - 48.88889vw); position:fixed; top:vw(120); left:0; overflow-y:auto; }
+.scroll_hidden .chat_view { width:100%; height:calc(100% - 36.11111vw); position:fixed; top:vw(120); left:0; overflow-y:auto; }
+.scroll_hidden .chat_view.h_resize { height:calc(100% - 41.66667vw) }
+.scroll_hidden .chat_write { width:100%; position:fixed; bottom:0; left:0; }
+

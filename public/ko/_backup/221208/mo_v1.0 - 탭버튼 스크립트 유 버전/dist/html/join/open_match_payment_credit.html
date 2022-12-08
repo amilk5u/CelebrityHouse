@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>셀럽하우스</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="title" content="">
+        <meta name="Description" content="">
+        <meta name="Keywords" content="">
+        <meta name="Author" content="">
+        <meta name="robots" content="ALL">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:site_name" content="">
+        <link rel="shortcut icon" href="" type="image/png"/>
+        <link rel="stylesheet" href="../../stylesheets/css/common.css">
+        <script src="../../javascripts/jquery-1.8.2.min.js"></script>
+    </head>
+    <body >
+        <!--<div class="guide_line">
+            <div class="guide_center"></div>
+        </div>-->
+        <div id="wrap">
+            <div class="page_wrap">
+                <div class="btn_align_left">
+                    <button type="button" class="btn_page_prev">이전페이지로 이동</button>
+                </div>
+            </div>
+            <!-- container -->
+            <div class="join_wrap">
+                <div class="sub_title_wrap">
+                    <h2>오픈 매칭 결제</h2>
+                </div>
+                <div class="macth_payment">
+                    <div class="match_info">
+                        <div class="title_wrap">
+                            <strong>오픈 매칭 정보</strong>
+                            <span class="join_type join_type_field">필드</span>
+                            <!--<span class="join_type join_type_screen">스크린</span>-->
+                        </div>
+                        <ul class="field_list_wrap">
+                            <li>
+                                <span>골프장</span>
+                                <div>
+                                    <strong class="list_word">블루 용인 CC</strong>
+                                    <p>경기도 용인시 보개원삼로 1534번길 40</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span>날짜</span>
+                                <div>
+                                    <strong class="list_number">2022.07.15(금) 12:00</strong>
+                                    <!--<p>~ 2022.07.16(토)<span>1박2일</span></p>-->
+                                </div>
+                            </li>
+                            <li>
+                                <span>참가비</span>
+                                <div>
+                                    <strong class="list_word">무료</strong>
+                                    <p>라운딩 관련 모든 비용 무료</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span>참가인원</span>
+                                <div>
+                                    <div class="status_wrap">
+                                        <div class="people">
+                                            <!--<span class="people_empty">비어있음</span>-->
+                                            <span class="people_female">남성</span>
+                                            <span class="people_female">남성</span>
+                                            <span class="people_male">여성</span>
+                                            <span class="people_male">여성</span>
+                                        </div>
+                                        <!--<p class="msg_type msg_type_ing">2명 매칭 예정</p>-->
+                                        <p class="msg_type msg_type_done">2명 매칭 완료</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>매칭예정</span>
+                                <div>
+                                    <strong class="list_word">1명 x 1일</strong>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="recruitment_guidance">경기도 용인에 위치한 블루윈 용인 CC에서 동반 라운딩 이벤트를 오픈합니다~ 많은 관심 부탁드려요.</div>
+                    </div>
+                    <div class="confirm_wrap">
+                        <div class="title_wrap">
+                            <strong>결제 정보 확인</strong>
+                        </div>
+                        <ul class="field_list_wrap">
+                            <li>
+                                <span>주문번호</span>
+                                <div>
+                                    <strong class="list_number">202206231937001</strong>
+                                </div>
+                            </li>
+                            <li>
+                                <span>상품명</span>
+                                <div>
+                                    <strong class="list_word">동반 라운딩 비용 (2명X2일)</strong>
+                                </div>
+                            </li>
+                            <li>
+                                <span>결제금액</span>
+                                <div>
+                                    <strong class="list_number">200,000원</strong>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="notification_type01">
+                            <li>조인 매칭 요청 시 48시간 이내에 셀럽이 매칭됩니다.</li>
+                            <li>매칭 완료 시 결제 버튼이 활성화되며, 24시간 이내에 결제를 완료해주셔야 정상적인 서비스 이용이 가능합니다.</li>
+                            <li>미결제 시 매칭은 자동으로 취소됩니다.</li>
+                            <li>미결제 또는 매칭 요청 취소(철회) 시 서비스 정책에 따라 최대 15일간 매칭 서비스 이용이 제한될 수 있습니다.</li>
+                        </ul>
+                    </div>
+                    <div class="payment_wrap">
+                        <!-- 셀럽 페이 기본 -->
+                        <div class="form_type02">
+                            <dl>
+                                <dt><label for="txt_pay">셀럽페이 사용</label></dt>
+                                <dd><input type="text" name="" id="txt_pay" placeholder="100원 이상 입력해주세요"></dd>
+                            </dl>
+                        </div>
+                        <!-- 셀럽 페이 (입력중) -->
+                        <!--<div class="form_type02">
+                            <dl>
+                                <dt><label for="txt_pay">셀럽페이 사용</label></dt>
+                                <dd><input type="text" name="" id="txt_pay" value="30원" placeholder="100원 이상 입력해주세요"></dd>
+                            </dl>
+                        </div>-->
+                        <!-- 셀럽 페이 오류 시 활성화 -->
+                        <!--<div class="form_type02">
+                            <dl class="error_msg">
+                                <dt><label for="txt_pay">셀럽페이 사용</label></dt>
+                                <dd><input type="text" name="" id="txt_pay" value="30원" placeholder="100원 이상 입력해주세요"></dd>
+                            </dl>
+                            <span>100원 이상부터 사용이 가능합니다.</span>
+                        </div>-->
+                        <p class="notification_type02">보유 셀럽페이 <span><em>13,050</em>원</span></p>
+
+                        <div class="price">
+                            <strong>총 결제금액</strong>
+                            <div>
+                                <p><span>500,000</span>원</p>
+                                <em>(VAT포함)</em>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment_type">
+                        <div class="title_wrap">
+                            <strong>결제 수단</strong>
+                        </div>
+                        <div class="cont_wrap">
+                            <ul class="tab_menu">
+                                <li class="active"><button type="button">신용카드</button></li>
+                                <li><button type="button">계좌이체</button></li>
+                            </ul>
+                            <div class="tab_contents">
+                                <div class="cont_credit">
+                                    <div class="form_type02">
+                                        <div>
+                                            <select name="" id="sel_company">
+                                                <option value="">카드사를 선택해주세요</option>
+                                                <option value="">선택 1</option>
+                                                <option value="">선택 2</option>
+                                                <option value="">선택 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cont_transfer">
+                                    <div class="form_type03_2">
+                                        <input type="checkbox" id="chk_receipt" checked>
+                                        <label for="chk_receipt">현금 영수증 신청</label>
+                                    </div>
+                                    <div class="receipt_wrap">
+                                        <div class="receipt_type">
+                                            <div class="form_type03_1">
+                                                <input type="radio" id="receiptType_1" name="receiptType" checked>
+                                                <label for="receiptType_1">개인 소득 공제</label>
+                                            </div>
+                                            <div class="form_type03_1">
+                                                <input type="radio" id="receiptType_2" name="receiptType">
+                                                <label for="receiptType_2">사업자 지출 증빙</label>
+                                            </div>
+                                        </div>
+                                        <div class="receipt_info">
+                                            <div class="form_type02">
+                                                <div>
+                                                    <select name="" id="sel_receiptType" class="vaildFiled">
+                                                        <option value="">선택하세요</option>
+                                                        <option value="" selected>휴대폰 번호</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form_type02">
+                                                <div>
+                                                    <input type="text" placeholder="-를 제외하고 입력해주세요">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment_terms">
+                        <div class="form_type03_2">
+                            <input type="checkbox" id="chk_all">
+                            <label for="chk_all">약관 전체 동의</label>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="form_type03_1">
+                                    <input type="checkbox" id="chk_service">
+                                    <label for="chk_service">(필수) 서비스 이용약관</label>
+                                    <a href="#">서비스 이용약관 바로가기</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form_type03_1">
+                                    <input type="checkbox" id="chk_privacy">
+                                    <label for="chk_privacy">(필수) 개인정보 수집 및 이용 동의</label>
+                                    <a href="#">개인정보 수집 및 이용 동의 바로가기</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btn_wrap">
+                    <button type="button" class="btn_default btn_type01" disabled>결제하기</button>
+                </div>
+            </div>
+            <!-- //container -->
+            <script src="../../javascripts/plugin.js"></script>
+            <script src="../../javascripts/design_common.js"></script>
+        </div>
+    </body>
+</html>

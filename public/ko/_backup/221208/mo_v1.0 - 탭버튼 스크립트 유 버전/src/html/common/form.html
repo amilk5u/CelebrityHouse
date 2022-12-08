@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>골프 조인 서비스</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="title" content="">
+        <meta name="Description" content="">
+        <meta name="Keywords" content="">
+        <meta name="Author" content="">
+        <meta name="robots" content="ALL">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:site_name" content="">
+        <link rel="shortcut icon" href="" type="image/png"/>
+        <link rel="stylesheet" href="../../stylesheets/css/common.css">
+        <script src="../../javascripts/jquery-1.8.2.min.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <!-- container -->
+            <div class="guide-style">
+                <h2>Form style 1</h2>
+                <strong>기본</strong>
+                <em>input id = label for 값을 동일하게 적용해주세요.</em>
+                <div class="form_type01">
+                    <div>
+                        <input type="text" name="" id="text_type01" placeholder="사용 가능한 선택 주소">
+                        <label for="text_type01">Default</label>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <strong>기본 - 데이터 입력된 후</strong>
+                <div class="form_type01">
+                    <div>
+                        <input type="text" name="" id="text_type01-1" placeholder="사용 가능한 선택 주소" value="gildong@na">
+                        <label for="text_type01-1">Default + Write</label>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <strong>기본 - 데이터 입력 오류</strong>
+                <em>div:error_msg 클래스명 추가</em>
+                <div class="form_type01">
+                    <div class="error_msg">
+                        <input type="text" name="" id="text_type01-2" placeholder="사용 가능한 선택 주소" value="gildong@naver.com">
+                        <label for="text_type01-2">Default + Write - Error</label>
+                    </div>
+                    <span>에러문구가 출력됩니다.</span>
+                </div>
+
+                <br><br>
+
+                <strong>기본 - 데이터 입력 정상</strong>
+                <em>div:correct_msg 클래스명 추가</em>
+                <div class="form_type01">
+                    <div class="correct_msg">
+                        <input type="text" name="" id="text_type01-3" placeholder="사용 가능한 선택 주소" value="gildong@naver.com">
+                        <label for="text_type01-3">Default + Write - Correct</label>
+                    </div>
+                    <span>사용 가능한 이메일입니다.</span>
+                </div>
+
+                <br><br>
+
+                <strong>비밀번호</strong>
+                <div class="form_type01">
+                    <div>
+                        <input type="password" name="" id="pass_type01" placeholder="알파벳 소문자+숫자+특수문자 8자 이상">
+                        <label for="pass_type01">Default</label>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <strong>비밀번호 - 데이터 입력 중 버튼노출 (보기)</strong>
+                <em>div:pw_chk 클래스명 추가 / input:validField 클래스명 추가</em>
+                <div class="form_type01">
+                    <div class="pw_chk">
+                        <input type="password" name="" id="pass_type01-3" placeholder="알파벳 소문자+숫자+특수문자 8자 이상" value="123456" class="validField">
+                        <label for="pass_type01-3">Default + Write + Button</label>
+                        <button type="button" class="btn_pwChk">보기</button>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <strong>비밀번호 - 데이터 입력 중 버튼노출 (가리기)</strong>
+                <em>div:pw_chk 클래스명 추가 / input:validField 클래스명 추가</em>
+                <div class="form_type01">
+                    <div class="pw_chk">
+                        <input type="text" name="" id="pass_type01-4" placeholder="알파벳 소문자+숫자+특수문자 8자 이상" value="123456" class="validField">
+                        <label for="pass_type01-4">Default + Write + Button</label>
+                        <button type="button" class="btn_pwChk">가리기</button>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <strong>비밀번호 - 데이터 입력된 후</strong>
+                <div class="form_type01">
+                    <div>
+                        <input type="password" name="" id="pass_type01-2" placeholder="알파벳 소문자+숫자+특수문자 8자 이상" value="123456" class="validField">
+                        <label for="pass_type01-2">Default + Write</label>
+                        <button type="button" class="btn_pwChk">보기</button>
+                    </div>
+                </div>
+
+                <br><hr><br>
+
+                <h2>Form style 2</h2>
+
+                <strong>Input</strong>
+                <div class="form_type02">
+                    <dl>
+                        <dt><label for="form_type02_text">input:default</label></dt>
+                        <dd><input type="text" name="" id="form_type02_text" placeholder="Default"></dd>
+                    </dl>
+                </div>
+
+                <br><br>
+
+                <div class="form_type02">
+                    <dl>
+                        <dt><label for="form_type02_text-2" class="required">input:default+required<em>필수입력</em></label></dt>
+                        <dd><input type="text" name="" id="form_type02_text-2" placeholder="Default+required"></dd>
+                    </dl>
+                </div>
+
+                <br><br>
+
+                <em>dl:correct_msg 클래스명 추가</em>
+                <div class="form_type02">
+                    <dl class="correct_msg">
+                        <dt><label for="form_type02_correct">Default + Write - Correct</label></dt>
+                        <dd><input type="text" name="" id="form_type02_correct" placeholder="Default + Write - Correct" value="데이터 입력 정상"></dd>
+                    </dl>
+                    <span>사용 가능한 이메일입니다.</span>
+                </div>
+
+                <br><br>
+
+                <em>dl:error_msg 클래스명 추가</em>
+                <div class="form_type02">
+                    <dl class="error_msg">
+                        <dt><label for="form_type02_error">Default + Write - Error</label></dt>
+                        <dd><input type="text" name="" id="form_type02_error" value="데이터 입력 에러" placeholder="Default + Write - Error"></dd>
+                    </dl>
+                    <span>에러문구가 출력됩니다.</span>
+                </div>
+
+                <br><br>
+
+                <div class="form_type02">
+                    <dl>
+                        <dt><label for="form_type02_text">input:default+disabled</label></dt>
+                        <dd><input type="text" name="" id="form_type02_disabled" placeholder="Default" value="Default+disabled" disabled></dd>
+                    </dl>
+                </div>
+
+                <br><br>
+
+                <strong>Select</strong>
+                <div class="form_type02">
+                    <dl>
+                        <dt><label for="form_type02_select">select:default</label></dt>
+                        <dd>
+                            <select name="" id="form_type02_select">
+                                <option value="">Default</option>
+                                <option value="">선택 1</option>
+                                <option value="">선택 2</option>
+                                <option value="">선택 3</option>
+                            </select>
+                        </dd>
+                    </dl>
+                </div>
+
+                <br><br>
+
+                <em>option selected 될때, select:validField 클래스명 추가</em>
+                <div class="form_type02">
+                    <dl>
+                        <dt><label for="form_type02_select-2">select:selected</label></dt>
+                        <dd>
+                            <select name="" id="form_type02_select-2" class="validField">
+                                <option value="">선택하세요</option>
+                                <option value="" selected>Selected</option>
+                                <option value="">선택 2</option>
+                                <option value="">선택 3</option>
+                            </select>
+                        </dd>
+                    </dl>
+                </div>
+
+                <br><br>
+
+                <div class="form_type02">
+                    <dl>
+                        <dt><label for="form_type02_select-3">select:selected+disabled</label></dt>
+                        <dd>
+                            <select name="" id="form_type02_select-3" class="validField" disabled>
+                                <option value="">선택하세요</option>
+                                <option value="" selected>Selected+disabled</option>
+                                <option value="">선택 2</option>
+                                <option value="">선택 3</option>
+                            </select>
+                        </dd>
+                    </dl>
+                </div>
+
+                <br><br>
+
+                <strong>Textarea</strong>
+                <div class="form_type02">
+                    <dl>
+                        <dt><label for="txt">textarea</label></dt>
+                        <dd>
+                            <textarea name="" id="txt" cols="" rows="" placeholder="간단한 자기 소개를 통해 다른 회원들에게 자신을 소개 할 수 있어요."></textarea>
+                            <span><em>0</em>/500</span>
+                        </dd>
+                    </dl>
+                </div>
+
+                <br><hr><br>
+
+                <h2>Form style 3 (no title)</h2>
+
+                <strong>Input</strong>
+                <div class="form_type02">
+                    <div>
+                        <input type="text" name="" id="form_type02_text_only_1" placeholder="Default">
+                    </div>
+                </div>
+
+                <br><br>
+
+                <div class="form_type02">
+                    <div>
+                        <input type="text" name="" id="form_type02_text_only_2" placeholder="Default+disabled" value="Default+disabled" disabled>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <em>div:correct_msg 클래스명 추가</em>
+                <div class="form_type02">
+                    <div class="correct_msg">
+                        <input type="text" name="" id="form_type02_correct_only" placeholder="Default + Write - Correct" value="데이터 입력 정상">
+                    </div>
+                    <span>사용 가능한 이메일입니다.</span>
+                </div>
+
+                <br><br>
+
+                <em>div:error_msg 클래스명 추가</em>
+                <div class="form_type02">
+                    <div class="error_msg">
+                        <input type="text" name="" id="form_type02_error_only" value="데이터 입력 에러" placeholder="Default + Write - Error">
+                    </div>
+                    <span>에러문구가 출력됩니다.</span>
+                </div>
+
+                <br><br>
+
+                <strong>Select</strong>
+                <div class="form_type02">
+                    <div>
+                        <select name="" id="">
+                            <option value="">Default</option>
+                            <option value="">선택 1</option>
+                            <option value="">선택 2</option>
+                            <option value="">선택 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <em>option selected 될때, select:validField 클래스명 추가</em>
+                <div class="form_type02">
+                    <div>
+                        <select name="" id="" class="validField">
+                            <option value="">선택하세요</option>
+                            <option value="" selected>Selected</option>
+                            <option value="">선택 2</option>
+                            <option value="">선택 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <div class="form_type02">
+                    <div>
+                        <select name="" id="" class="validField" disabled>
+                            <option value="">선택하세요</option>
+                            <option value="" selected>Selected+disabled</option>
+                            <option value="">선택 2</option>
+                            <option value="">선택 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <strong>Textarea</strong>
+                <div class="form_type03">
+                    <textarea name="" id="" cols="" rows="" placeholder="간단한 자기 소개를 통해 다른 회원들에게 자신을 소개 할 수 있어요."></textarea>
+                    <span><em>0</em>/500</span>
+                </div>
+
+                <br><br>
+
+                <strong>Checkbox / Radio</strong>
+
+                <div class="form_type03_1">
+                    <input type="checkbox" id="input_check_type01">
+                    <label for="input_check_type01">checkbox default</label>
+                </div>
+                <br>
+                <div class="form_type03_1">
+                    <input type="checkbox" id="input_check_type01-1" checked="">
+                    <label for="input_check_type01-1">checkbox default:checked</label>
+                </div>
+
+                <br>
+
+                <div class="form_type03_2">
+                    <input type="checkbox" id="input_check_type02">
+                    <label for="input_check_type02">checkbox default</label>
+                </div>
+                <br>
+                <div class="form_type03_2">
+                    <input type="checkbox" id="input_check_type02-1" checked="">
+                    <label for="input_check_type02-1">checkbox default:checked</label>
+                </div>
+
+                <br>
+
+                <div class="form_type03_1">
+                    <input type="radio" id="input_radio_type01">
+                    <label for="input_radio_type01">radio default</label>
+                </div>
+                <br>
+                <div class="form_type03_1">
+                    <input type="radio" id="input_radio_type01-1" checked="">
+                    <label for="input_radio_type01-1">radio default:checked</label>
+                </div>
+
+                <br><br>
+
+                <strong>Button</strong>
+                <em>a 태그일경우, btn_disabled 클래스명 추가</em><br><br>
+                <div class="button_style">
+                    <button type="button" class="btn_default btn_type01">버튼 타입 1 (button) - default</button>
+                    <br>
+                    <button type="button" class="btn_default btn_type01" disabled>버튼 타입 1 (button) - disabled</button>
+                    <br>
+                    <a href="#" class="btn_default btn_type01">버튼 타입 1 (a) - default</a>
+                    <br>
+                    <a href="#" class="btn_default btn_type01 btn_disabled">버튼 타입 1 (a) - disabled</a>
+
+                    <br>
+
+
+                    <button type="button" class="btn_default btn_type02">버튼 타입 2 (button) - default</button>
+                    <br>
+                    <button type="button" class="btn_default btn_type02" disabled>버튼 타입 2 (button) - disabled</button>
+                    <br>
+                    <a href="#" class="btn_default btn_type02">버튼 타입 2 (a) - default</a>
+                    <br>
+                    <a href="#" class="btn_default btn_type02 btn_disabled">버튼 타입 2 (a) - disabled</a>
+
+                    <br>
+
+                    <button type="button" class="btn_default btn_type03"><span>버튼 타입 3 (button) - default</span></button>
+                    <br>
+                    <button type="button" class="btn_default btn_type03" disabled><span>버튼 타입 3 (button) - disabled</span></button>
+                    <br>
+                    <a href="#" class="btn_default btn_type03"><span>버튼 타입 3 (a) - default</span></a>
+                    <br>
+                    <a href="#" class="btn_default btn_type03 btn_disabled"><span>버튼 타입 3 (a) - disabled</span></a>
+                </div>
+
+                <br><br><br><br>
+
+
+            </div>
+            <!-- //container -->
+        </div>
+
+        <script>
+            $(".btn_pwChk").click(function(){
+                alert($(this).text() + " 버튼 클릭")
+            });
+        </script>
+    </body>
+</html>

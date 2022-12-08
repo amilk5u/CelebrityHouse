@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>셀럽하우스 / Mobile</title>
+	<style type="text/css">
+
+		body{width:100%; height:100%;  font-family:vernada; margin:20px auto;}
+		#secretWrapper{width :98%; margin:0 auto;}
+		#secretWrapper h1{font-size:30px; text-align:center; margin:0 0 119px;}
+		#secretWrapper h2{font-size:20px; margin:30px 0 20px;}
+		#secretWrapper table{width:100%; border-top:1px solid #99948e; border-left:1px solid #99948e; border-collapse:collapse;}
+		#secretWrapper table .title1{background-color:#e6002d; color:#fff; padding:7px 0 5px; text-align:center;}
+		#secretWrapper table .title2{background-color:#f7f7f7; color:#707070; padding:7px 0 5px; text-align:center;}
+		#secretWrapper table .title3{background-color:#dfdfdf; color:#707070; padding:7px 0 5px; text-align:center;}
+		#secretWrapper table th{border-right:1px solid #99948e; border-bottom:1px solid #99948e; padding:5px 0;}
+		#secretWrapper table td{border-right:1px solid #99948e; border-bottom:1px solid #99948e;}
+		#secretWrapper table tbody td{padding:8px 20px; font-size:12px;}
+		#secretWrapper table tbody tr td a {color:#333; text-decoration:underline;}
+		#secretWrapper table tbody tr td em { color:red; font-weight:bold; font-size:11px; position:relative; background-color:#fff; }
+
+		#secretWrapper table tbody tr.ok th,
+		#secretWrapper table tbody tr.ok td{background:#9f9f95; color:#fff;}
+		#secretWrapper table tbody tr.ok td.dev{background:#9f9f95; color:#fff;}
+		#secretWrapper table tbody tr.ok td a{color:#fff;}
+
+		#secretWrapper table tbody tr.ok2 td{background:#c62b4a; color:#fff;}
+		#secretWrapper table tbody tr.ok2 td.dev {background:#c62b4a; color:#fff;}
+		#secretWrapper table tbody tr.ok2 td a{color:#fff;}
+
+		#secretWrapper table tbody tr.ok3 td{background:#6e58c6; color:#fff;}
+		#secretWrapper table tbody tr.ok3 td.dev {background:#a07fff; color:#333}
+		#secretWrapper table tbody tr.ok3 td a{color:#fff;}
+		#secretWrapper table tbody tr.del td{background:#999; color:#333;}
+
+		#secretWrapper table tbody tr.ok4 td{background:#c65858; color:#fff;}
+		#secretWrapper table tbody tr.ok4 td.dev {background:#c65858; color:#fff;}
+		#secretWrapper table tbody tr.ok4 td a{color:#fff;}
+
+		#secretWrapper table tbody tr.second td{background:#3ec546; color:#fff;}
+		#secretWrapper table tbody tr.second td.dev {background:#3ec546; color:#fff;}
+		#secretWrapper table tbody tr.second td a{color:#fff;}
+
+		#secretWrapper table tbody tr.cancel td {text-decoration:line-through; color:#888}
+		#secretWrapper table tbody tr.cancel td a { color:#888 }
+
+		#secretWrapper table tbody tr.celeb td { background-color:#ffb225; color:#fff; }
+		#secretWrapper table tbody tr.celeb td a { color:#fff; }
+
+		.caution {background-color:lightblue;}
+
+		body *{margin:0; padding:0;}
+		#secretWrapper .depth_info { width:98%; position:absolute; top:83px;}
+		#secretWrapper .depth_info.fix { position:fixed; top:0;}
+
+		.ia_guide {padding:30px 0 0;}
+		.ia_guide strong {font-size:20px;}
+		.ia_guide div {padding:20px 0 20px 30px; color:#fff; margin:20px 0 0;}
+		.ia_guide .ok {background-color:#9f9f95;}
+		.ia_guide .ok2 {background-color:#c62b4a;}
+		.ia_guide .ok3 {background-color:#6e58c6;}
+		.ia_guide .ok4 {background-color:#c65858;}
+		.ia_guide .second {background-color:#3ec546;}
+
+		.ia_guide .cancel {text-decoration:line-through; color:#666; border:1px solid #99948e; }
+		.ia_guide .celeb {background-color:#ffb225;}
+
+		.last_update {position:absolute; right:1%; top:40px;}
+	</style>
+	<script src="javascripts/jquery-1.8.2.min.js"></script>
+	<script>
+		$(function () {
+			var $table = $("table");
+			var $tbody = $table.find("tbody");
+			$table.each(function () {
+				var _this = $(this);
+				var divisionDepth = _this.find("tbody > tr");
+				var divisionLength = divisionDepth.length;
+
+				divisionDepth.eq(0).find("td").eq(0).attr("rowspan", divisionLength);
+			});
+
+			var $depthInfo = $(".depth_info");
+			$(window).scroll(function () {
+				var st = $(this).scrollTop();
+				if(st > 83){
+					$depthInfo.addClass("fix");
+				} else {
+					$depthInfo.removeClass("fix");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<div id="secretWrapper">
+	<table class="depth_info">
+		<colgroup>
+			<col width="6%">
+			<col width="35%">
+			<col width="12%">
+			<col width="25%">
+			<col>
+		</colgroup>
+		<thead>
+		<tr class="title1">
+			<th colspan="2">DEPTH</th>
+			<th colspan="2">코딩현황</th>
+			<th>개발현황</th>
+		</tr>
+		<tr class="title2">
+			<th></th>
+			<th>1depth</th>
+			<th colspan="2">마크업 파일명</th>
+			<th>작업처리</th>
+		</tr>
+		<tr class="title3">
+			<th>구분</th>
+			<th>Label</th>
+			<th>Folder</th>
+			<th>File</th>
+			<th>상태</th>
+		</tr>
+		</thead>
+	</table>
+
+	<h1>셀럽하우스 / Mobile</h1>
+	<div class="ia_guide">
+		<strong>테이블에 색에 따른 진행 상태 분류</strong>
+		<div class="ok">퍼블 진행중</div>
+		<div class="ok2">퍼블 완료됬지만 - 디자인/기획에서 수정/변경이 있어서 차후 수정이 필요한 페이지</div>
+		<div class="ok3">퍼블 완료 - 디자인/기획까지 컨펌 완료</div>
+		<div class="ok4">산출물 배포 후 수정된 페이지</div>
+		<div class="second">2차 개발 범위</div>
+
+		<div class="cancel">와이어프레임에는 있지만 디자인이 없는 페이지 또는 변경되서 사용하지 않는 페이지</div>
+		<!--<div class="celeb">셀럽 페이지</div>-->
+	</div>
+
+	<!-- 공통 -->
+	<h2>Common</h2>
+	<table>
+		<colgroup>
+			<col width="6%">
+			<col width="35%">
+			<col width="12%">
+			<col width="25%">
+			<col>
+		</colgroup>
+		<tbody>
+		<tr class="">
+			<td rowspan="4">Common</td>
+			<td>form Guide</td>
+			<td>/common</td>
+			<td><a href="./html/common/form.html" target="_blank">form</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="">
+			<td>module Guide</td>
+			<td>/common</td>
+			<td><a href="./html/common/guide.html" target="_blank">guide</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="">
+			<td>alert Guide</td>
+			<td>/common</td>
+			<td><a href="./html/common/alert.html" target="_blank">alert</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="second">
+			<td>alert Guide2</td>
+			<td>/common</td>
+			<td><a href="./html/common/alert2.html" target="_blank">alert2</a></td>
+			<td class=""></td>
+		</tr>
+		</tbody>
+	</table>
+	<!-- //공통 -->
+
+	<!-- 메인 -->
+	<h2>Main</h2>
+	<table>
+		<colgroup>
+			<col width="6%">
+			<col width="35%">
+			<col width="12%">
+			<col width="25%">
+			<col>
+		</colgroup>
+		<tbody>
+		<tr class="ok3">
+			<td rowspan="11">Main</td>
+			<td>Home</td>
+			<td></td>
+			<td><a href="index.html" target="_blank">index</a></td>
+			<td class="">8/26<br>등록된 후기 별점 영역 변경<br>8/31 추가 피드백**<br>매칭후기 전체보기 버튼 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>Home > 확정스케줄 포함</td>
+			<td></td>
+			<td><a href="index_schedule.html" target="_blank">index_schedule</a></td>
+			<td class="">8/26<br>등록된 후기 별점 영역 변경<br>8/31 추가 피드백**<br>매칭후기 전체보기 버튼 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>Home > 봄</td>
+			<td></td>
+			<td><a href="index_spring.html" target="_blank">index_spring</a></td>
+			<td class="">8/26<br>등록된 후기 별점 영역 변경<br>8/31 추가 피드백**<br>매칭후기 전체보기 버튼 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>Home > 여름</td>
+			<td></td>
+			<td><a href="index_summer.html" target="_blank">index_summer</a></td>
+			<td class="">8/26<br>등록된 후기 별점 영역 변경<br>8/31 추가 피드백**<br>매칭후기 전체보기 버튼 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>Home > 가을</td>
+			<td></td>
+			<td><a href="index_fall.html" target="_blank">index_fall</a></td>
+			<td class="">8/26<br>등록된 후기 별점 영역 변경<br>8/31 추가 피드백**<br>매칭후기 전체보기 버튼 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>Home > 겨울</td>
+			<td></td>
+			<td><a href="index_winter.html" target="_blank">index_winter</a></td>
+			<td class="">8/26<br>등록된 후기 별점 영역 변경<br>8/31 추가 피드백**<br>매칭후기 전체보기 버튼 추가</td>
+		</tr>
+		<tr class="second">
+			<td>Home > 이용정지 (popup)</td>
+			<td></td>
+			<td><a href="suspension.html" target="_blank">suspension</a></td>
+			<td class="">8/26<br>등록된 후기 별점 영역 변경<br>8/31 추가 피드백**<br>매칭후기 전체보기 버튼 추가<br>11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="second">
+			<td>Home > 이용정지 (popup)</td>
+			<td></td>
+			<td><a href="suspension2.html" target="_blank">suspension2</a></td>
+			<td class="">11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="ok3">
+			<td>Home > 매칭 후기</td>
+			<td></td>
+			<td><a href="review.html" target="_blank">review</a></td>
+			<td class="">8/31 추가 피드백**<br>새로추가된 페이지**</td>
+		</tr>
+		<tr class="ok2">
+			<td>Home > 매칭 후기 (이벤트 라운딩 탭 활성화)</td>
+			<td></td>
+			<td><a href="review_event.html" target="_blank">review event</a></td>
+			<td class="">12/06 추가 피드백**<br>새로추가된 페이지**</td>
+		</tr>
+	
+		<tr class="ok3">
+			<td>셀럽 Home</td>
+			<td></td>
+			<td><a href="celeb_index.html" target="_blank">celeb_index</a></td>
+			<td class="">8/31 추가 피드백**<br>매칭후기 전체보기 버튼 추가</td>
+		</tr>
+		</tbody>
+	</table>
+	<!-- //메인 -->
+
+	<!-- 회원 -->
+	<h2>Member</h2>
+	<table>
+		<colgroup>
+			<col width="6%">
+			<col width="35%">
+			<col width="12%">
+			<col width="25%">
+			<col>
+		</colgroup>
+		<tbody>
+		<tr class="ok3">
+			<td rowspan="51">member</td>
+			<td>로그인</td>
+			<td>/member</td>
+			<td><a href="./html/member/login.html" target="_blank">login</a></td>
+			<td class="">8/19<br>회원가입 버튼 위치 변경<br>회원가입 바로가기 팝업형식으로 변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>로그인 > 입력</td>
+			<td>/member</td>
+			<td><a href="./html/member/login_ok.html" target="_blank">login_ok</a></td>
+			<td class="">8/19<br>회원가입 버튼 위치 변경<br>회원가입 바로가기 팝업형식으로 변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>로그인 > 오류</td>
+			<td>/member</td>
+			<td><a href="./html/member/login_error.html" target="_blank">login_error</a></td>
+			<td class="">8/19<br>회원가입 버튼 위치 변경<br>회원가입 바로가기 팝업형식으로 변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>아이디 찾기 > PASS 인증</td>
+			<td>/member</td>
+			<td><a href="./html/member/find_id.html" target="_blank">find_id</a></td>
+			<td class="">10/13 3차 수정<br>전화번호 입력란 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>아이디 찾기 > PASS 인증</td>
+			<td>/member</td>
+			<td><a href="./html/member/find_id_error.html" target="_blank">find_id_error</a></td>
+			<td class="">10/13 3차 페이지 추가**<br>PASS 인증 오류시 페이지 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>아이디 찾기 > PASS 인증 > 아이디 찾기완료</td>
+			<td>/member</td>
+			<td><a href="./html/member/find_id_ok.html" target="_blank">find_id_ok</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>비밀번호 변경</td>
+			<td>/member</td>
+			<td><a href="./html/member/find_pw_change.html" target="_blank">find_pw_change</a></td>
+			<td class="">10/13 3차 수정<br>전화번호 입력란 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>비밀번호 변경 > 입력중</td>
+			<td>/member</td>
+			<td><a href="./html/member/find_pw_change_ing.html" target="_blank">find_pw_change_ing</a></td>
+			<td class="">10/13 3차 수정<br>전화번호 입력란 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>비밀번호 변경 > 입력완료(오류)</td>
+			<td>/member</td>
+			<td><a href="./html/member/find_pw_change_error.html" target="_blank">find_pw_change_error</a></td>
+			<td class="">10/13 3차 페이지 추가**<br>PASS 인증 오류시 페이지 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>비밀번호 변경 > 입력완료(정상)</td>
+			<td>/member</td>
+			<td><a href="./html/member/find_pw_change_ok.html" target="_blank">find_pw_change_ok</a></td>
+			<td class="">10/13 3차 수정<br>전화번호 입력란 추가</td>
+		</tr>
+		<tr class="cancel">
+			<td>비밀번호 변경 > PASS 인증</td>
+			<td>/member</td>
+			<td><a href="./html/member/find_pw_change_pass.html" target="_blank">find_pw_change_pass</a></td>
+			<td class="">10/13 3차 수정<br>페이지 사용안함</td>
+		</tr>
+		<tr class="ok3">
+			<td>비밀번호 변경 > PASS 인증 > 입력</td>
+			<td>/member</td>
+			<td><a href="./html/member/find_pw_change_pass_ing.html" target="_blank">find_pw_change_pass_ing</a></td>
+			<td class="">10/13 3차 수정<br>안내문구 변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>비밀번호 변경 > PASS 인증 > 입력완료</td>
+			<td>/member</td>
+			<td><a href="./html/member/find_pw_change_pass_ok.html" target="_blank">find_pw_change_pass_ok</a></td>
+			<td class="">10/13 3차 수정<br>안내문구 변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>비밀번호 변경 완료</td>
+			<td>/member</td>
+			<td><a href="./html/member/find_pw_change_done.html" target="_blank">find_pw_change_done</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>회원가입 > 약관동의</td>
+			<td>/member</td>
+			<td><a href="./html/member/terms.html" target="_blank">terms</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>회원가입 > 약관동의 > 약관 동의 진행중</td>
+			<td>/member</td>
+			<td><a href="./html/member/terms_ing.html" target="_blank">terms_ing</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>회원가입 > 약관동의 > 약관 전체 동의</td>
+			<td>/member</td>
+			<td><a href="./html/member/terms_ok.html" target="_blank">terms_ok</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>회원가입 > 계정생성</td>
+			<td>/member</td>
+			<td><a href="./html/member/registration.html" target="_blank">registration</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>회원가입 > 계정생성 > 입력중</td>
+			<td>/member</td>
+			<td><a href="./html/member/registration_ing.html" target="_blank">registration_ing</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>회원가입 > 계정생성 > 입력오류</td>
+			<td>/member</td>
+			<td><a href="./html/member/registration_error.html" target="_blank">registration_error</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>회원가입 > 계정생성 > 입력완료</td>
+			<td>/member</td>
+			<td><a href="./html/member/registration_ok.html" target="_blank">registration_ok</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>회원가입 > 본인인증</td>
+			<td>/member</td>
+			<td><a href="./html/member/self-authentication.html" target="_blank">self-authentication</a></td>
+			<td class="">10/13 3차 수정<br>전화번호 입력란 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>회원가입 > 본인인증 > PASS 인증 완료</td>
+			<td>/member</td>
+			<td><a href="./html/member/self-authentication_ok.html" target="_blank">self-authentication_ok</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>회원가입 완료</td>
+			<td>/member</td>
+			<td><a href="./html/member/signup_done.html" target="_blank">signup_done</a></td>
+			<td class="">8/19<br>시간 변경완료</td>
+		</tr>
+		<tr class="">
+			<td colspan="4">&nbsp;</td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 회원가입 > 약관동의</td>
+			<td>/member</td>
+			<td><a href="./html/member/celeb_terms.html" target="_blank">celeb_terms</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 회원가입 > 계정생성</td>
+			<td>/member</td>
+			<td><a href="./html/member/celeb_registration.html" target="_blank">celeb_registration</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 회원가입 > 본인인증</td>
+			<td>/member</td>
+			<td><a href="./html/member/celeb_self-authentication.html" target="_blank">celeb_self-authentication</a></td>
+			<td class="">10/13 3차 수정<br>전화번호 입력란 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 회원가입 > 본인인증 > PASS 인증 완료</td>
+			<td>/member</td>
+			<td><a href="./html/member/celeb_self-authentication_ok.html" target="_blank">celeb_self-authentication_ok</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 회원 추가정보 입력</td>
+			<td>/member</td>
+			<td><a href="./html/member/celeb_add_necessary.html" target="_blank">celeb_add_necessary</a></td>
+			<td class="">9/13<br>추천인 코드 입력란 추가<br>10/7 2차 수정<br>추천인 코드 비활성화 화면 추가<br>10/31 추가수정<br>동반라운딩 비용 필드 추가<br>11/11 2차 개발건(2차)<br>자기소개 필수입력</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 회원 추가정보 입력 > 입력완료</td>
+			<td>/member</td>
+			<td><a href="./html/member/celeb_add_necessary_ok.html" target="_blank">celeb_add_necessary_ok</a></td>
+			<td class="">9/13<br>추천인 코드 입력란 추가<br>10/31 추가수정<br>동반라운딩 비용 필드 추가<br>11/11 2차 개발건(2차)<br>자기소개 필수입력</td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 회원가입 승인 상태 > 심사 진행중</td>
+			<td>/member</td>
+			<td><a href="./html/member/pending.html" target="_blank">pending</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 회원가입 승인 상태 > 승인 완료</td>
+			<td>/member</td>
+			<td><a href="./html/member/pending_approval.html" target="_blank">pending_approval</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 회원가입 승인 상태 > 서비스 이용수칙 안내 (popup)</td>
+			<td>/member</td>
+			<td><a href="./html/member/pending_approval_popup.html" target="_blank">pending_approval_popup</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 회원가입 승인 상태 > 승인 거절</td>
+			<td>/member</td>
+			<td><a href="./html/member/pending_denial.html" target="_blank">pending_denial</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 회원 목록 > 가까운 지역</td>
+			<td>/member</td>
+			<td><a href="./html/member/celeb_list_location.html" target="_blank">celeb_list_location</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="">
+			<td colspan="4">&nbsp;</td>
+		</tr>
+		<tr class="ok3">
+			<td>회원 목록 > 가까운 지역</td>
+			<td>/member</td>
+			<td><a href="./html/member/list_location.html" target="_blank">list_location</a></td>
+			<td class="">8/26<br>VIP 뱃지추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>회원 목록 > 비슷한 타수</td>
+			<td>/member</td>
+			<td><a href="./html/member/list_hit.html" target="_blank">list_hit</a></td>
+			<td class="">8/26<br>VIP 뱃지추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>회원 목록 > 비슷한 나이</td>
+			<td>/member</td>
+			<td><a href="./html/member/list_age.html" target="_blank">list_age</a></td>
+			<td class="">8/26<br>VIP 뱃지추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>회원 상세</td>
+			<td>/member</td>
+			<td><a href="./html/member/view_default.html" target="_blank">view_default</a></td>
+			<td class="">8/31 추가 피드백**<br>전화번호 정보 삭제</td>
+		</tr>
+		<tr class="ok3">
+			<td>회원 상세 > 사진포함</td>
+			<td>/member</td>
+			<td><a href="./html/member/view_setted.html" target="_blank">view_setted</a></td>
+			<td class="">8/31 추가 피드백**<br>전화번호 정보 삭제<br>10/21 4차 수정<br>사진 정렬방식 변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>회원 상세 > 사진 및 조인모집현황 포함</td>
+			<td>/member</td>
+			<td><a href="./html/member/view_join.html" target="_blank">view_join</a></td>
+			<td class="">8/31 추가 피드백**<br>전화번호 정보 삭제<br>vip 기본정보 이미지 비공개</td>
+		</tr>
+
+		<tr class="">
+			<td colspan="4">&nbsp;</td>
+		</tr>
+		<tr class="second">
+			<td>회원 목록(멤버십) > 가까운 지역</td>
+			<td>/member</td>
+			<td><a href="./html/member/list_location_membership.html" target="_blank">list_location_membership</a></td>
+			<td class="">11/4 2차 개발건(1차)<br>멤버십 전용 화면 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 회원 (기본)</td>
+			<td>/member</td>
+			<td><a href="./html/member/celeb_list_default.html" target="_blank">celeb_list_default</a></td>
+			<td class="">11/4 2차 개발건(1차)<br>멤버십 전용 화면 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 회원 (동반 라운딩 초청)</td>
+			<td>/member</td>
+			<td><a href="./html/member/celeb_list_invite.html" target="_blank">celeb_list_invite</a></td>
+			<td class="">11/4 2차 개발건(1차)<br>멤버십 전용 화면 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 회원 > 상세(기본)</td>
+			<td>/member</td>
+			<td><a href="./html/member/celeb_view_default.html" target="_blank">celeb_view_default</a></td>
+			<td class="">11/4 2차 개발건(1차)<br>멤버십 전용 화면 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 회원 > 상세(동반 라운딩 초청)</td>
+			<td>/member</td>
+			<td><a href="./html/member/celeb_view_invite.html" target="_blank">celeb_view_invite</a></td>
+			<td class="">11/4 2차 개발건(1차)<br>멤버십 전용 화면 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 회원 > 상세(사진 비공개)</td>
+			<td>/member</td>
+			<td><a href="./html/member/celeb_view_private.html" target="_blank">celeb_view_private</a></td>
+			<td class="">11/4 2차 개발건(1차)<br>멤버십 전용 화면 추가</td>
+		</tr>
+		</tbody>
+	</table>
+	<!-- //회원 -->
+
+	<!-- 조인 -->
+	<h2>Join</h2>
+	<table>
+		<colgroup>
+			<col width="6%">
+			<col width="35%">
+			<col width="12%">
+			<col width="25%">
+			<col>
+		</colgroup>
+		<tbody>
+
+		<tr class="ok3">
+			<td rowspan="73">join</td>
+			<td>조인</td>
+			<td>/join</td>
+			<td><a href="./html/join/list.html" target="_blank">list</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>조인 > 필터</td>
+			<td>/join</td>
+			<td><a href="./html/join/filter.html" target="_blank">filter</a></td>
+			<td class=""></td>
+		</tr>
+
+		<tr class="second">
+			<td>조인 (라운딩 이벤트 배너 포함)</td>
+			<td>/join</td>
+			<td><a href="./html/join/list2.html" target="_blank">list2</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>이벤트 라운딩 관련 페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 (라운딩 이벤트 배너 포함) > 이벤트 라운딩</td>
+			<td>/join</td>
+			<td><a href="./html/join/list_event.html" target="_blank">list_event</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>이벤트 라운딩 관련 페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>이벤트 라운딩 상세 > 필드 추첨 대기중</td>
+			<td>/join</td>
+			<td><a href="./html/join/view_event.html" target="_blank">view_event</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>이벤트 라운딩 관련 페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>이벤트 라운딩 상세 > 이벤트 라운딩 이용수칙 안내 (popup)</td>
+			<td>/join</td>
+			<td><a href="./html/join/view_event_guide.html" target="_blank">view_event_guide</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>이벤트 라운딩 관련 페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>이벤트 라운딩 상세 > 필드 추첨 대기중 > 참여완료</td>
+			<td>/join</td>
+			<td><a href="./html/join/view_event_participated.html" target="_blank">view_event_participated</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>이벤트 라운딩 관련 페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>이벤트 라운딩 상세 > 필드 추첨 완료 > 참여완료+매칭</td>
+			<td>/join</td>
+			<td><a href="./html/join/view_event_participated_match.html" target="_blank">view_event_participated_match</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>이벤트 라운딩 관련 페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>이벤트 라운딩 상세 > 필드 추첨 완료 > 매칭</td>
+			<td>/join</td>
+			<td><a href="./html/join/view_event_match.html" target="_blank">view_event_match</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>이벤트 라운딩 관련 페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>필드 조인 모집</td>
+			<td>/join</td>
+			<td><a href="./html/join/field_recruit.html" target="_blank">field_recruit</a></td>
+			<td class="">10/21 4차 수정<br>명칭 변경 및 골프장 검색 팝업 포함<br>11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="second">
+			<td>필드 조인 모집 > 골프장 찾기 팝업 > 검색 및 선택 완료</td>
+			<td>/join</td>
+			<td><a href="./html/join/field_recruit_club_ok.html" target="_blank">field_recruit_club_ok</a></td>
+			<td class="">10/21 4차 페이지 추가**<br>골프장 검색 결과 포함<br>11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="ok3">
+			<td>필드 조인 모집 > 주소찾기 팝업</td>
+			<td>/join</td>
+			<td><a href="./html/join/field_recruit_address.html" target="_blank">field_recruit_address</a></td>
+			<td class="">10/13 3차 페이지 추가**<br>주소찾기 팝업 추가 (10/14 전달완료)</td>
+		</tr>
+		<tr class="second">
+			<td>필드 조인 모집 > 입력</td>
+			<td>/join</td>
+			<td><a href="./html/join/field_recruit_ok.html" target="_blank">field_recruit_ok</a></td>
+			<td class="">10/21 4차 수정<br>골프장 검색 결과 포함<br>ex) 팝업활성화_검색결과 있음*<br>11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="second">
+			<td>필드 조인 모집 > 입력 (동반자 추가 포함)</td>
+			<td>/join</td>
+			<td><a href="./html/join/field_recruit_ok2.html" target="_blank">field_recruit_ok2</a></td>
+			<td class="">10/21 4차 수정<br>골프장 검색 결과 포함<br>ex) 팝업활성화_검색결과 없음*<br>11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="second">
+			<td>스크린 조인 모집</td>
+			<td>/join</td>
+			<td><a href="./html/join/screen_recruit.html" target="_blank">screen_recruit</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>주소찾기 팝업</td>
+		</tr>
+		<tr class="second">
+			<td>스크린 조인 모집 > 입력</td>
+			<td>/join</td>
+			<td><a href="./html/join/screen_recruit_ok.html" target="_blank">screen_recruit_ok</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>주소찾기 팝업<br>ex) 팝업활성화_검색결과 있음*</td>
+		</tr>
+		<tr class="second">
+			<td>스크린 조인 모집 > 입력</td>
+			<td>/join</td>
+			<td><a href="./html/join/screen_recruit_address.html" target="_blank">screen_recruit_address</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>주소찾기 팝업<br>ex) 팝업활성화_검색결과 없음*</td>
+		</tr>
+		<tr class="second">
+			<td>필드 조인 매칭</td>
+			<td>/join</td>
+			<td><a href="./html/join/field_match.html" target="_blank">field_match</a></td>
+			<td class="">10/21 4차 수정<br>명칭 변경 및 골프장 검색 팝업 포함<br>11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="second">
+			<td>필드 조인 매칭 > 입력</td>
+			<td>/join</td>
+			<td><a href="./html/join/field_match_ok.html" target="_blank">field_match_ok</a></td>
+			<td class="">10/21 4차 수정<br>골프장 검색 결과 포함<br>11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="ok3">
+			<td>필드 조인 매칭 > 조인 매칭 요청하기 (popup)</td>
+			<td>/join</td>
+			<td><a href="./html/join/field_match_confirm.html" target="_blank">field_match_confirm</a></td>
+			<td class="">10/26 5차 수정<br>유의사항 정책변경</td>
+		</tr>
+		<tr class="second">
+			<td>필드 조인 매칭 > 조인 매칭 안내 페이지 (popup)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_info.html" target="_blank">match_info</a></td>
+			<td class="">8/19 새로추가된 페이지**<br>팝업 추가완료<br>10/26 5차 수정<br>유의사항 정책변경<br>11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="second">
+			<td>필드 조인 매칭 > 조인 매칭 이용 수칙 (popup)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_guide.html" target="_blank">match_guide</a></td>
+			<td class="">8/19 새로추가된 페이지**<br>팝업 추가완료<br>10/26 5차 수정<br>유의사항 정책변경<br>골프장 검색 결과 포함<br>11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="ok3">
+			<td>스크린 조인 매칭</td>
+			<td>/join</td>
+			<td><a href="./html/join/screen_match.html" target="_blank">screen_match</a></td>
+			<td class="">주소찾기 팝업 추가<br>ex) 팝업활성화_검색결과 있음*</td>
+		</tr>
+		<tr class="ok3">
+			<td>스크린 조인 매칭 > 입력</td>
+			<td>/join</td>
+			<td><a href="./html/join/screen_match_ok.html" target="_blank">screen_match_ok</a></td>
+			<td class="">주소찾기 팝업 추가<br>ex) 팝업활성화_검색결과 없음*</td>
+		</tr>
+		<tr class="ok3">
+			<td>나의 조인 현황 > 모집 (모집중+모집완료)</td>
+			<td>/join</td>
+			<td><a href="./html/join/my_history.html" target="_blank">my_history</a></td>
+			<td class="">10/4 1차 수정<br>모집 데이터 없을때 화면 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>나의 조인 현황 > 모집 (전체)</td>
+			<td>/join</td>
+			<td><a href="./html/join/my_history_all.html" target="_blank">my_history_all</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>나의 조인 현황 > 신청 (모집중+모집완료)</td>
+			<td>/join</td>
+			<td><a href="./html/join/my_history_recruit.html" target="_blank">my_history_recruit</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>나의 조인 현황 > 신청 (전체)</td>
+			<td>/join</td>
+			<td><a href="./html/join/my_history_recruit_all.html" target="_blank">my_history_recruit_all</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>나의 조인 현황 > 매칭 (매칭중+매칭완료)</td>
+			<td>/join</td>
+			<td><a href="./html/join/my_history_match.html" target="_blank">my_history_match</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>나의 조인 현황 > 매칭 (전체)</td>
+			<td>/join</td>
+			<td><a href="./html/join/my_history_match_all.html" target="_blank">my_history_match_all</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>프로젝트위키 123님의 모집 현황</td>
+			<td>/join</td>
+			<td><a href="./html/join/others_history.html" target="_blank">others_history</a></td>
+			<td class=""></td>
+		</tr>
+
+		<tr class="ok3">
+			<td>조인 모집 상세 > 모집중 (organizer+ing)</td>
+			<td>/join</td>
+			<td><a href="./html/join/recruit_detail_ing.html" target="_blank">recruit_detail_ing</a></td>
+			<td class="">8/26<br>댓글영역 구조변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>조인 모집 상세 > 모집 완료 입력중 (organizer+full+ing)</td>
+			<td>/join</td>
+			<td><a href="./html/join/recruit_detail_full_ing.html" target="_blank">recruit_detail_full_ing</a></td>
+			<td class="">8/26<br>댓글영역 구조변경<br>10/21 4차 수정<br>댓글 작성시, 업로드 사진 정렬방식 변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>조인 모집 상세 > 모집 완료 (organizer+full)</td>
+			<td>/join</td>
+			<td><a href="./html/join/recruit_detail_full.html" target="_blank">recruit_detail_full</a></td>
+			<td class="">8/26<br>댓글영역 구조변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>조인 모집 상세 > 조인 완료 (organizer+done)</td>
+			<td>/join</td>
+			<td><a href="./html/join/recruit_detail_done.html" target="_blank">recruit_detail_done</a></td>
+			<td class="">8/26<br>댓글영역 구조변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>조인 모집 상세 > 모집 취소 (organizer+cancel)</td>
+			<td>/join</td>
+			<td><a href="./html/join/recruit_detail_cancel.html" target="_blank">recruit_detail_cancel</a></td>
+			<td class="">8/26<br>댓글영역 구조변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>조인 모집 상세 > 모집중 (participant+before)</td>
+			<td>/join</td>
+			<td><a href="./html/join/recruit_detail_participant_before.html" target="_blank">recruit_detail_participant_before</a></td>
+			<td class="">8/26<br>댓글영역 구조변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>조인 모집 상세 > 모집 완료 (participant+in)</td>
+			<td>/join</td>
+			<td><a href="./html/join/recruit_detail_participant_in.html" target="_blank">recruit_detail_participant_in</a></td>
+			<td class="">8/26<br>댓글영역 구조변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>조인 모집 상세 > 모집 완료 입력중(participant+full+ing)</td>
+			<td>/join</td>
+			<td><a href="./html/join/recruit_detail_participant_full_ing.html" target="_blank">recruit_detail_participant_full_ing</a></td>
+			<td class="">8/26<br>댓글영역 구조변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>조인 모집 상세 > 모집 완료 (participant+full)</td>
+			<td>/join</td>
+			<td><a href="./html/join/recruit_detail_participant_full.html" target="_blank">recruit_detail_participant_full</a></td>
+			<td class="">8/26<br>댓글영역 구조변경</td>
+		</tr>
+
+		<!--<tr class="ok3">
+			<td>조인 매칭 상세 > 매칭 대기중 (ing+pending)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_ing.html" target="_blank">match_detail_ing</a></td>
+			<td class="">10/26 5차 수정<br>유의사항 정책변경</td>
+		</tr>-->
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 대기중 (default)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_default.html" target="_blank">match_detail_default</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 대기중 (ing+participated)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_ing_participated.html" target="_blank">match_detail_ing_participated</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 대기중 (ing+participated+confirm)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_ing_participated_confirm.html" target="_blank">match_detail_ing_participated_confirm</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<!--<tr class="ok3">
+			<td>조인 매칭 상세 > 매칭 취소 (ing+pending+cancel)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_cancel.html" target="_blank">match_detail_cancel</a></td>
+			<td class="">10/26 5차 수정<br>유의사항 정책변경</td>
+		</tr>-->
+		<!--<tr class="cancel">
+			<td>조인 매칭 상세 > 매칭 완료 (full+pending)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_full.html" target="_blank">match_detail_full</a></td>
+			<td class="">10/26 5차 수정<br>유의사항 정책변경<br>11/11 2차 개발건(2차)<br>하기 페이지 확인</td>
+		</tr>-->
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 완료 (full+pending)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_full_pending.html" target="_blank">match_detail_full_pending</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 대기중 (ing+participated+confirm-cancel)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_ing_participated_confirm-cancel.html" target="_blank">match_detail_ing_participated_confirm-cancel</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 완료 (full+pending+change)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_full_pending_change.html" target="_blank">match_detail_full_pending_change</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 요청 자동 취소 안내 (popup)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_cancel_confirm.html" target="_blank">match_cancel_confirm</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<!--<tr class="second">
+			<td>조인 매칭 결제 > 신용카드</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_payment_credit.html" target="_blank">match_payment_credit</a></td>
+			<td class="">8/19<br>추천인 코드 입력 추가 완료<br>8/26<br>셀럽페이 추가<br>11/11 2차 개발건(2차)<br>결제 정보 약관 변경</td>
+		</tr>-->
+		<tr class="second">
+			<td>조인 매칭 결제 > 신용카드 > 입력</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_payment_credit_ok.html" target="_blank">match_payment_credit_ok</a></td>
+			<td class="">8/19<br>추천인 코드 입력 추가 완료<br>8/26<br>셀럽페이 추가<br>11/11 2차 개발건(2차)<br>결제 정보 약관 변경</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 완료 (full+done)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_full_done.html" target="_blank">match_detail_full_done</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 요청 취소 확인 (popup)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_cancel_confirm.html" target="_blank">match_detail_cancel_confirm</a></td>
+			<td class="">10/26 5차 수정<br>유의사항 정책변경<br>11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 완료 (full+done+change-request)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_full_done_change-request.html" target="_blank">match_detail_full_done_change-request</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 취소 (ing+cancel)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_ing_cancel.html" target="_blank">match_detail_ing_cancel</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 취소 (full+pending+cancel)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_full_pending_cancel.html" target="_blank">match_detail_full_pending_cancel</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 취소 (full+done+cancel)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_full_done_cancel.html" target="_blank">match_detail_full_done_cancel</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 조인 완료 (done+done)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_done_done_rate.html" target="_blank">match_detail_done_done_rate</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 조인 완료 (done+done_별점+후기입력)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_done_done_rate_write.html" target="_blank">match_detail_done_done_rate_write</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 조인 완료 (done+done_별점+사진+후기입력)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_done_done_rate_write_photo.html" target="_blank">match_detail_done_done_rate_write_photo</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 조인 완료 (done+done_후기입력완료)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_done_done_rate_done.html" target="_blank">match_detail_done_done_rate_done</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 조인 완료 (done+done_후기입력완료+관리자답변)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_done_done_rate_done_admin.html" target="_blank">match_detail_done_done_rate_done_admin</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+
+		<!--<tr class="ok3">
+			<td>조인 매칭 상세 > 매칭 취소 (full+pending+cancel)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_full_cancel.html" target="_blank">match_detail_full_cancel</a></td>
+			<td class="">10/26 5차 수정<br>유의사항 정책변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>조인 매칭 상세 > 매칭 완료 (full+done) - 별점 선택 전</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_done.html" target="_blank">match_detail_done</a></td>
+			<td class="">8/26<br>등록된 후기 별점 영역<br>후기작성 별점 부분 변경(주석확인*)<br>10/26 5차 수정<br>유의사항 정책변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>조인 매칭 상세 > 매칭 완료 (full+done) - 별점 선택 후</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_done_select.html" target="_blank">match_detail_done_select</a></td>
+			<td class="">8/26<br>등록된 후기 별점 영역<br>후기작성 별점 부분 변경(주석확인*)<br>10/26 5차 수정<br>유의사항 정책변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>조인 매칭 상세 > 매칭 완료 (full+done) - 별점 선택 후 + 사진 추가</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_done_photo.html" target="_blank">match_detail_done_photo</a></td>
+			<td class="">10/21 4차 페이지 추가**<br>후기 작성시, 업로드 사진 정렬방식 변경<br>10/26 5차 수정<br>유의사항 정책변경</td>
+		</tr>
+		<tr class="second">
+			<td>조인 매칭 상세 > 매칭 완료 (full+done+change+request)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_done_change.html" target="_blank">match_detail_done_change</a></td>
+			<td class="">8/19 새로추가된 페이지**<br>셀럽의 매칭 변경,취소 요청 포함<br>8/26<br>등록된 후기 별점 영역<br>후기작성 별점 부분 변경(주석확인*)<br>10/26 5차 수정<br>유의사항 정책변경<br>11/11 2차 개발건(2차)</td>
+		</tr>-->
+		<!--<tr class="second">
+			<td>조인 매칭 상세 > 매칭 취소 (full+done+cancel)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_done_cancel.html" target="_blank">match_detail_done_cancel</a></td>
+			<td class="">10/26 5차 수정<br>유의사항 정책변경<br>11/11 2차 개발건(2차)</td>
+		</tr>-->
+		<!--<tr class="ok3">
+			<td>조인 매칭 상세 > 조인 완료 (done+done)</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_detail_done_done.html" target="_blank">match_detail_done_done</a></td>
+			<td class="">8/26<br>등록된 후기 별점 영역<br>후기작성 별점 부분 변경<br>10/26 5차 수정<br>유의사항 정책변경</td>
+		</tr>-->
+		<!--<tr class="cancel">
+			<td>조인 매칭 결제</td>
+			<td>/join</td>
+			<td><a href="./html/join/match_payment.html" target="_blank">match_payment</a></td>
+			<td class=""></td>
+		</tr>-->
+		<!--<tr class="ok1">
+			<td>오픈 매칭 상세 > 매칭 대기중 (ing+pending)</td>
+			<td>/join</td>
+			<td><a href="./html/join/open_match_detail_ing.html" target="_blank">open_match_detail_ing</a></td>
+			<td class="">페이지 추가예정</td>
+		</tr>
+		<tr class="ok1">
+			<td>오픈 매칭 상세 > 조인 매칭 이용 수칙 (popup)</td>
+			<td>/join</td>
+			<td><a href="./html/join/open_match_guide.html" target="_blank">open_match_guide</a></td>
+			<td class="">페이지 추가예정</td>
+		</tr>
+		<tr class="ok1">
+			<td>오픈 매칭 결제 > 신용카드</td>
+			<td>/join</td>
+			<td><a href="./html/join/open_match_payment_credit.html" target="_blank">open_match_payment_credit</a></td>
+			<td class="">페이지 추가예정</td>
+		</tr>
+		<tr class="ok1">
+			<td>오픈 매칭 상세 > 매칭 완료 (full+done)</td>
+			<td>/join</td>
+			<td><a href="./html/join/open_match_detail_done.html" target="_blank">open_match_detail_done</a></td>
+			<td class="">페이지 추가예정</td>
+		</tr>
+		<tr class="ok1">
+			<td>오픈 매칭 상세 > 조인 매칭 참여 취소 확인 (popup)</td>
+			<td>/join</td>
+			<td><a href="./html/join/open_match_cancel.html" target="_blank">open_match_cancel</a></td>
+			<td class="">페이지 추가예정</td>
+		</tr>-->
+		<tr class="">
+			<td colspan="4">&nbsp;</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 조인 > 매칭</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_list_match.html" target="_blank">celeb_list_match</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 조인 매칭 상세 > 매칭 대기중 (default)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_default.html" target="_blank">celeb_match_detail_default</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 조인 매칭 상세 > 동반 라운딩 이용수칙 안내 (popup)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_use_guide.html" target="_blank">celeb_match_use_guide</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 조인 매칭 상세 > 매칭 대기중 (ing+participate)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_ing_participate.html" target="_blank">celeb_match_detail_ing_participate</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 조인 매칭 상세 > 매칭 대기중 (ing+confirm)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_ing_confirm.html" target="_blank">celeb_match_detail_ing_confirm</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 조인 매칭 상세 > 매칭 완료 (match+confirm)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_match_confirm.html" target="_blank">celeb_match_detail_match_confirm</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 조인 매칭 상세 > 매칭 완료 (match)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_match.html" target="_blank">celeb_match_detail_match</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 조인 매칭 상세 > 매칭 완료 (match)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_match_done_confirm.html" target="_blank">celeb_match_detail_match_done_confirm</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 조인 매칭 상세 > 조인 완료 (match+done+confirm_후기입력완료)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_match_done_confirm_rate_done.html" target="_blank">celeb_match_detail_match_done_confirm_rate_done</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 조인 매칭 상세 > 매칭 취소 (match+done+confirm@cancel)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_match_done_confirm_cancel.html" target="_blank">celeb_match_detail_match_done_confirm_cancel</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 조인 현황 > 매칭 (매칭중+매칭완료)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_history_match.html" target="_blank">celeb_history_match</a></td>
+			<td class="">11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 조인 현황 > 매칭 (전체)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_history_match_all.html" target="_blank">celeb_history_match_all</a></td>
+			<td class="">11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 이벤트 라운딩 상세 > 필드 추첨 완료 > 참여완료+매칭</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_view_event_participated_match.html" target="_blank">celeb_view_event_participated_match</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>이벤트 라운딩 관련 페이지 추가</td>
+		</tr>
+		<!--<tr class="ok3">
+			<td>셀럽 조인</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_list.html" target="_blank">celeb_list</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 조인 모집 상세 > 모집중 (organizer+ing)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_recruit_detail_ing.html" target="_blank">celeb_recruit_detail_ing</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 조인 매칭 상세 > 매칭 대기중 (ing+pending)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_ing.html" target="_blank">celeb_match_detail_ing</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 조인 매칭 상세 > 조인 매칭 이용수칙 안내 (popup)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_guide.html" target="_blank">celeb_match_guide</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 조인 매칭 상세 > 매칭 완료 (full+pending)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail.html" target="_blank">celeb_match_detail</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 조인 매칭 상세 > 조인 완료 (done+done)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_done_done.html" target="_blank">celeb_match_detail_done_done</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 매칭 요청 목록 (셀럽 바텀바 - 골프공 클릭시 이동)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_list.html" target="_blank">celeb_match_list</a></td>
+			<td class=""></td>
+		</tr>-->
+		<!--<tr class="ok3">
+			<td>셀럽 조인 매칭 상세 > 매칭 완료 (full+pending)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_full.html" target="_blank">celeb_match_detail_full</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 조인 매칭 상세 > 매칭 완료 (full+done)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_done.html" target="_blank">celeb_match_detail_done</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 조인 매칭 상세 > 매칭 취소 (full+done+cancel)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_done_cancel.html" target="_blank">celeb_match_detail_done_cancel</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 조인 매칭 상세 > 조인 완료 (done+done)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_match_detail_done_done2.html" target="_blank">celeb_match_detail_done_done2</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok1">
+			<td>셀럽 오픈 매칭 상세 > 매칭 대기중 (ing+pending)</td>
+			<td>/join</td>
+			<td><a href="./html/join/celeb_open_match_detail_ing.html" target="_blank">celeb_open_match_detail_ing</a></td>
+			<td class="">페이지 추가예정</td>
+		</tr>-->
+		</tbody>
+	</table>
+	<!-- //조인 -->
+
+	<!-- 내정보 -->
+	<h2>Mypage</h2>
+	<table>
+		<colgroup>
+			<col width="6%">
+			<col width="35%">
+			<col width="12%">
+			<col width="25%">
+			<col>
+		</colgroup>
+		<tbody>
+		<tr class="ok3">
+			<td rowspan="38">mypage</td>
+			<td>내 정보 > 기본</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/default.html" target="_blank">default</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>내 정보 > 사진포함</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/type1.html" target="_blank">type1</a></td>
+			<td class="">8/19<br>셀럽페이 추가 완료<br>8/31 추가 피드백**<br>이미지 비공개 처리 시 알림 문구 추가<br>10/7 2차 수정<br>사진 정렬방식 변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>내 정보 > 사진포함 + 매칭안내문구 포함</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/type2.html" target="_blank">type2</a></td>
+			<td class="">8/19<br>셀럽페이 추가 및 매칭문구 위치 변경 완료<br>8/31 추가 피드백**<br>이미지 비공개 처리 시 알림 문구 추가<br>10/7 2차 수정<br>사진 정렬방식 변경</td>
+		</tr>
+		<!--<tr class="">
+			<td>내 정보 > 정보입력(after-pay)</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/type3.html" target="_blank">type3</a></td>
+			<td class=""></td>
+		</tr>-->
+		<tr class="ok3">
+			<td>내 정보 수정</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/modify.html" target="_blank">modify</a></td>
+			<td class="">8/31 추가 피드백**<br>기본정보 사진 이미지 비공개 체크박스+안내문구 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>내 정보 수정 (대표 이미지 포함)</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/modify_photo.html" target="_blank">modify_photo</a></td>
+			<td class="">8/31 추가 피드백**<br>기본정보 사진 이미지 비공개 체크박스+안내문구 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>계정 설정</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/account.html" target="_blank">account</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>계정 설정 > 멤버십 정기결제</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/account_membership_regular.html" target="_blank">account_membership_regular</a></td>
+			<td class="">8/19<br>추천인 코드 추가 완료</td>
+		</tr>
+		<tr class="ok3">
+			<td>계정 설정 > 멤버십 기간제</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/account_membership_fixed.html" target="_blank">account_membership_fixed</a></td>
+			<td class="">8/19<br>추천인 코드 추가 완료</td>
+		</tr>
+		<tr class="cancel">
+			<td>멤버십 가입하기 > 안내</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/info.html" target="_blank">info</a></td>
+			<td class="">10/21 4차<br>페이지 삭제</td>
+		</tr>
+		<tr class="cancel">
+			<td>멤버십 가입하기 > 신용카드 등록</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/add_credit.html" target="_blank">add_credit</a></td>
+			<td class="">10/21 4차<br>페이지 삭제</td>
+		</tr>
+		<tr class="ok3">
+			<td>멤버십 가입하기 > 유료 멤버십 시작</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/registration.html" target="_blank">registration</a></td>
+			<td class="">8/19<br>추천인 코드 입력 추가<br>약관동의 버튼 삭제, CTA 카피 변경 완료<br>10/21 4차 수정<br>결제정보 확인란 삭제 및 요금안내표 삽입</td>
+		</tr>
+		<tr class="ok3">
+			<td>멤버십 정기결제</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/regular_payment.html" target="_blank">regular_payment</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>멤버십 정기결제 관리 (등록카드 1개)</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/regular_payment_list2.html" target="_blank">regular_payment_list2</a></td>
+			<td class="">10/21 4차 수정<br>안내문구 추가</td>
+		</tr>
+		<tr class="cancel">
+			<td>멤버십 정기결제 관리 > 결제수단 추가</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/regular_payment_add.html" target="_blank">regular_payment_add</a></td>
+			<td class="">10/21 4차<br>페이지 삭제</td>
+		</tr>
+		<tr class="ok3">
+			<td>멤버십 정기결제 관리 (등록카드 2개이상)</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/regular_payment_list.html" target="_blank">regular_payment_list</a></td>
+			<td class="">10/21 4차 수정<br>안내문구 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>멤버십 정기결제 관리 > 결제수단 순서 변경</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/regular_payment_align.html" target="_blank">regular_payment_align</a></td>
+			<td class="">10/21 4차 수정<br>안내문구 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>멤버십 해지하기</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/membership_cancel.html" target="_blank">membership_cancel</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>멤버십 해지하기 > 약관동의</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/membership_cancel_ok.html" target="_blank">membership_cancel_ok</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>회원 탈퇴하기</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/withdrawal.html" target="_blank">withdrawal</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>회원 탈퇴하기 > 입력</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/withdrawal_ok.html" target="_blank">withdrawal_ok</a></td>
+			<td class=""></td>
+		</tr>
+
+		<tr class="ok3">
+			<td>기간제 멤버십 구매하기</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/fixed_term_info.html" target="_blank">fixed_term_info</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="cancel">
+			<td>기간제 멤버십 구매하기 > 결제</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/fixed_term_payment.html" target="_blank">fixed_term_payment</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>기간제 멤버십 구매하기 > 결제 > 신용카드</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/fixed_term_payment_credit.html" target="_blank">fixed_term_payment_credit</a></td>
+			<td class="">8/19<br>추천인 코드 입력 추가<br>멤버십 정보 줄바꿈 수정 완료<br>8/26<br>셀럽페이 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>기간제 멤버십 구매하기 > 결제 > 계좌이체 </td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/fixed_term_payment_transfer.html" target="_blank">fixed_term_payment_transfer</a></td>
+			<td class="">8/19<br>추천인 코드 입력 추가<br>멤버십 정보 줄바꿈 수정 완료<br>8/26<br>셀럽페이 추가</td>
+		</tr>
+
+		<tr class="ok3">
+			<td>결제 내역</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/payment.html" target="_blank">payment</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>결제 내역 > 목록</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/payment_list.html" target="_blank">payment_list</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>결제 내역 > 목록 (결제취소 포함)</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/payment_list_type1.html" target="_blank">payment_list_type1</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>결제 내역 > 목록 (결제 부분취소 포함)</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/payment_list_type2.html" target="_blank">payment_list_type2</a></td>
+			<td class=""></td>
+		</tr>
+
+		<tr class="">
+			<td colspan="4">&nbsp;</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 정보 > 사진포함</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/celeb_type1.html" target="_blank">celeb_type1</a></td>
+			<td class="">10/21 4차 수정<br>사진 정렬방식 변경<br>11/11 2차 개발건(2차)<br>동반라운딩 정보 약관 변경</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 정보 > 사진포함 + 매칭안내문구 포함</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/celeb_type1_private.html" target="_blank">celeb_type1_private</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>프로필 비공개 선택 시 내정보 페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 내 정보 수정 (대표 이미지 포함)</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/celeb_modify_photo.html" target="_blank">celeb_modify_photo</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>셀럽 내 정보 수정 페이지 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 계정 설정</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/celeb_account.html" target="_blank">celeb_account</a></td>
+			<td class="">9/13<br>추천인 코드 입력란 추가<br>10/7 2차 수정<br>추천인 코드 하단 링크 생성하기 화면 추가</td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 마이페이지 > 매칭 상세보기 (user-matching-view)</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/celeb_match_view.html" target="_blank">celeb_match_view</a></td>
+			<td class="">10/21 4차 수정<br>사진 정렬방식 변경</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽페이 환전</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/celeb_pay_exchange.html" target="_blank">celeb_pay_exchange</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>적립/환전 내역 카피변경</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽페이 환전 > 입력중(정상)</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/celeb_pay_exchange_ing.html" target="_blank">celeb_pay_exchange_ing</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>적립/환전 내역 카피변경</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽페이 환전 > 입력중(오류)</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/celeb_pay_exchange_error.html" target="_blank">celeb_pay_exchange_error</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>적립/환전 내역 카피변경</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽페이 환전 > 셀럽페이 환전내역</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/celeb_pay_list.html" target="_blank">celeb_pay_list</a></td>
+			<td class="">11/11 2차 개발건(2차)<br>타이틀 카피변경 및 적립화면 추가</td>
+		</tr>
+		<tr class="second">
+			<td>셀럽페이 환전 > 셀럽페이 환전내역 (데이터 없음)</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/celeb_pay_list_none.html" target="_blank">celeb_pay_list_none</a></td>
+			<td class="">10/7 2차 수정<br>새로 추가된 페이지**<br>11/11 2차 개발건(2차)<br>타이틀 내역 카피변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽페이 환전 > 환전 요청하기</td>
+			<td>/mypage</td>
+			<td><a href="./html/mypage/celeb_pay_exchange_request.html" target="_blank">celeb_pay_exchange_request</a></td>
+			<td class=""></td>
+		</tr>
+		</tbody>
+	</table>
+	<!-- //내정보 -->
+
+	<!-- 기타 페이지 -->
+	<h2>Customer</h2>
+	<table>
+		<colgroup>
+			<col width="6%">
+			<col width="35%">
+			<col width="12%">
+			<col width="25%">
+			<col>
+		</colgroup>
+		<tbody>
+		<tr class="ok3">
+			<td rowspan="18">customer</td>
+			<td>알림 설정</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/setting.html" target="_blank">setting</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>알림 목록 > 전체</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/list.html" target="_blank">list</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>알림 목록 > 공지</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/list_notice.html" target="_blank">list_notice</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="second">
+			<td>알림 목록 > 알림</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/list_alarm.html" target="_blank">list_alarm</a></td>
+			<td class="">11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="ok3">
+			<td>알림 상세</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/view.html" target="_blank">view</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>고객센터</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/info.html" target="_blank">info</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>채팅 > 리스트</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/chat_list.html" target="_blank">chat_list</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>채팅 > 리스트 (데이터 없음)</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/chat_list_none.html" target="_blank">chat_list_none</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>채팅 > 상세 > 매칭 (입력전)</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/chat_view_match.html" target="_blank">chat_view_match</a></td>
+			<td class="">10/21 4차 수정<br>채팅내역 구조 변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>채팅 > 상세 > 매칭 (입력후)</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/chat_view_match_done.html" target="_blank">chat_view_match_done</a></td>
+			<td class="">10/21 4차 수정<br>채팅내역 구조 변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>채팅 > 상세 > 모집</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/chat_view_recruit.html" target="_blank">chat_view_recruit</a></td>
+			<td class="">10/21 4차 수정<br>채팅내역 구조 변경</td>
+		</tr>
+		<tr class="ok3">
+			<td>서비스 이용약관</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/service.html" target="_blank">service</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>개인정보 처리방침</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/privacy.html" target="_blank">privacy</a></td>
+			<td class=""></td>
+		</tr>
+
+		<tr class="">
+			<td colspan="4">&nbsp;</td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 회원 이용약관</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/celeb.html" target="_blank">celeb</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="second">
+			<td>셀럽 알림 목록 > 알림</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/celeb_list_alarm.html" target="_blank">celeb_list_alarm</a></td>
+			<td class="">11/11 2차 개발건(2차)</td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 채팅 > 리스트</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/celeb_chat_list.html" target="_blank">celeb_chat_list</a></td>
+			<td class=""></td>
+		</tr>
+		<tr class="ok3">
+			<td>셀럽 채팅 > 상세 > 매칭</td>
+			<td>/customer</td>
+			<td><a href="./html/customer/celeb_chat_view_match.html" target="_blank">celeb_chat_view_match</a></td>
+			<td class="">10/21 4차 수정<br>채팅내역 구조 변경</td>
+		</tr>
+		</tbody>
+	</table>
+	<!-- //기타 페이지 -->
+</div>
+</body>
+</html>

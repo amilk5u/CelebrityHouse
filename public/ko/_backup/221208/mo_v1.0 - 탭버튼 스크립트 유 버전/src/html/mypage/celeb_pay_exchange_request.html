@@ -1,0 +1,66 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+            <div class="page_wrap">
+                <div class="btn_align_left">
+                    <button type="button" class="btn_page_prev2">이전페이지로 이동</button>
+                </div>
+            </div>
+            <!-- container -->
+            <div class="exchange_wrap">
+                <div class="sub_title_wrap">
+                    <h2>셀럽페이 환전 요청하기</h2>
+                </div>
+                <div class="exchange_request">
+                    <form action="">
+                        <legend>셀럽페이 환전 요청하기</legend>
+                        <fieldset>
+                            <div class="request_wrap">
+                                <div class="form_type02">
+                                    <dl>
+                                        <dt><label for="exchange_amount">환전 금액</label></dt>
+                                        <dd><input type="text" name="" id="exchange_amount" value="10,000원" disabled></dd>
+                                    </dl>
+                                </div>
+                                <div class="form_type02">
+                                    <dl>
+                                        <dt><label for="bank_name">은행명</label></dt>
+                                        <dd>
+                                            <select name="" id="bank_name">
+                                                <option value="">환전 받을 은행을 선택해주세요</option>
+                                                <option value="">선택 1</option>
+                                                <option value="">선택 2</option>
+                                                <option value="">선택 3</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="form_type02">
+                                    <dl>
+                                        <dt><label for="accont_number">계좌번호</label></dt>
+                                        <dd><input type="text" name="" id="accont_number" placeholder="환전 받을 계좌번호를 입력해주세요"></dd>
+                                    </dl>
+                                </div>
+                                <div class="form_type02">
+                                    <dl>
+                                        <dt><label for="user_name">예금주명</label></dt>
+                                        <dd><input type="text" name="" id="user_name" placeholder="계좌 예금주명을 입력해주세요"></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div class="btn_wrap">
+                        <div class="form_type03_2">
+                            <input type="checkbox" id="save_accont">
+                            <label for="save_accont">계좌정보 저장하기</label>
+                        </div>
+                        <button type="button" class="btn_default btn_type01" disabled>환전 요청 완료하기</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //container -->
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})

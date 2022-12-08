@@ -1,0 +1,90 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+            <div class="page_wrap">
+                <div class="btn_align_left">
+                    <button type="button" class="btn_page_prev">이전페이지로 이동</button>
+                </div>
+            </div>
+            <!-- container -->
+            <div class="mypage_wrap">
+                <div class="account_set">
+                    <div class="my_profile">
+                        <div class="title_wrap">
+                            <h2>계정 설정</h2>
+                        </div>
+                        <div class="my_profile_ui">
+                            <div class="picture_wrap">
+                                <!-- 등록된 사진이 없는 경우 -->
+                                <span>등록된 사진 없음</span>
+                            </div>
+                            <div class="info_wrap">
+                                <em class="user_label label_normal">일반</em>
+                                <!--<em class="user_label label_vip">VIP</em>-->
+                                <strong class="user_name">프로젝트위키 123</strong>
+                                <div class="user_info">
+                                    <ul>
+                                        <li>30세</li>
+                                        <li>남</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account_info_wrap">
+                        <div class="form_type02">
+                            <dl>
+                                <dt><label for="txt_email">이메일</label></dt>
+                                <dd><input type="text" name="" id="txt_email" placeholder="" value="gildong@naver.com" disabled=""></dd>
+                            </dl>
+                        </div>
+                        <div class="form_type02 account_password">
+                            <dl>
+                                <dt><label for="txt_password">비밀번호</label></dt>
+                                <dd>
+                                    <input type="password" name="" id="txt_password" placeholder="" value="123456789" disabled="">
+                                    <button type="button" class="btn_default btn_type02" disabled="">변경하기</button>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="form_type02 account_phone">
+                            <dl>
+                                <dt><label for="txt_phone">휴대폰번호</label></dt>
+                                <dd>
+                                    <input type="text" name="" id="txt_phone" placeholder="" value="010-1234-5678" disabled="">
+                                    <button type="button" class="btn_default btn_type02" disabled="">PASS 재인증</button>
+                                </dd>
+                            </dl>
+                        </div>
+                        <ul class="notification_type01">
+                            <li>이메일(아이디)는 변경이 불가합니다.</li>
+                            <li>휴대폰 번호가 변경된 경우 변경된 번호로 PASS 재인증을 진행해 주시면 됩니다.</li>
+                            <li>본인 명의가 아닌 휴대폰 번호 사용 시 서비스 이용에 불이익이 발생할 수 있습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="membership_wrap">
+                    <strong class="membership_title">멤버십 정보</strong>
+                    <div class="membership_info membership_normal">
+                        프로젝트위키 123님은 <em class="membership_member">일반</em> 회원이에요!
+                    </div>
+                    <div>
+                        <a href="#" class="membership_li">
+                            <span class="membership_li_tit">정기결제</span>
+                            <span class="membership_go">가입하기</span>
+                        </a>
+                        <a href="#" class="membership_li">
+                            <span class="membership_li_tit">기간결제</span>
+                            <span class="membership_go">구매하기</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="account_btn btn_wrap">
+                    <a href="#" class="btn_default btn_type01">회원 탈퇴하기</a>
+                </div>
+            </div>
+            <!-- //container -->
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})

@@ -1,0 +1,462 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+            <div class="page_wrap">
+                <div class="btn_align_left">
+                    <button type="button" class="btn_page_prev2">이전페이지로 이동</button>
+                </div>
+            </div>
+            <!-- container -->
+            <div class="join_wrap">
+                <div class="sub_title_wrap">
+                    <h2>필드 조인 모집</h2>
+                </div>
+                <form method="post" action="">
+                    <fieldset>
+                        <legend>필드 조인 모집</legend>
+                        <div class="recruit_wrap">
+                            <div class="recruit_info">
+                                <strong>필드 조인 모집 정보를 작성해주세요.</strong>
+                                <div class="form_wrap">
+                                    <div class="form_type02 form_addr">
+                                        <dl>
+                                            <dt><label for="txt_courseName" class="required">골프장 명<em>필수입력</em></label></dt>
+                                            <dd>
+                                                <input type="text" name="" id="txt_courseName" placeholder="골프장을 검색해주세요" value="고양 컨트리클럽">
+                                                <button type="button" class="btn_default btn_type02" onclick="modalshow()">검색하기</button>
+                                            </dd>
+                                        </dl>
+                                        <!--<ul class="club_sch_result">
+                                            <li><span>주소</span>경기 고양시 덕양구 홍도로 304-23<br>상세 주소입니다</li>
+                                            <li><span>전화번호</span>031-1234-5678</li>
+                                            <li><span>홈페이지</span><a href="http://www.goyangcc.com" target="_blank">http://www.goyangcc.com</a></li>
+                                        </ul>-->
+                                        <p class="club_sch_addr">경기 고양시 덕양구 홍도로 304-23</p>
+                                    </div>
+                                    <!--<div class="form_type02">
+                                        <dl>
+                                            <dt><label for="txt_courseName" class="required">골프장 명<em>필수입력</em></label></dt>
+                                            <dd><input type="text" name="" id="txt_courseName" placeholder="상세 골프장 명을 입력해주세요" value="고양 컨트리클럽"></dd>
+                                        </dl>
+                                    </div>-->
+                                    <div class="form_type02 form_date">
+                                        <dl>
+                                            <dt><label for="txt_startDate" class="required">조인 날짜<em>필수입력</em></label></dt>
+                                            <dd><input type="text" name="" id="txt_startDate" placeholder="만나는 날짜를 선택해주세요" value="2022.07.29 (금)" class="datepicker" readonly></dd>
+                                        </dl>
+                                        <div class="form_type03_2">
+                                            <input type="checkbox" id="chk_overDay" checked>
+                                            <label for="chk_overDay">1박 이상</label>
+                                        </div>
+                                    </div>
+                                    <!--<div class="form_type02">
+                                        <dl>
+                                            <dt><label for="txt_time" class="required">조인 시간<em>필수입력</em></label></dt>
+                                            <dd><input type="time" name="" id="txt_time" placeholder="만나는 시간을 선택해주세요" required></dd>
+                                        </dl>
+                                    </div>-->
+                                    <div class="form_type02 form_date">
+                                        <dl>
+                                            <dt><label for="txt_endDate" class="required">종료 날짜<em>필수입력</em></label></dt>
+                                            <dd><input type="text" name="" id="txt_endDate" placeholder="종료 날짜를 선택해주세요" value="2022.07.31 (일)" class="datepicker" readonly></dd>
+                                        </dl>
+                                        <div class="notification_type03 noti_green">
+                                            <span>2022.07.29 ~ 2022.07.31 (2박 3일)</span>
+                                        </div>
+                                    </div>
+                                    <div class="form_type02 form_fee">
+                                        <dl>
+                                            <dt><label for="txt_greenFee" class="required">그린피 금액<em>필수입력</em></label></dt>
+                                            <dd><input type="text" name="" id="txt_greenFee" placeholder="그린피 금액을 입력해주세요" value="100,000원"></dd>
+                                        </dl>
+                                        <div class="form_type03_2">
+                                            <input type="checkbox" id="chk_free">
+                                            <label for="chk_free">라운딩 관련 모든 비용 무료</label>
+                                        </div>
+                                    </div>
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="sel_people" class="required">전체 인원(본인 포함)<em>필수입력</em></label></dt>
+                                            <dd>
+                                                <select name="" id="sel_people" class="validField">
+                                                    <option value="">본인 포함 전체 모집 인원을 선택해주세요</option>
+                                                    <option value="" selected>4명</option>
+                                                    <option value="">선택 2</option>
+                                                    <option value="">선택 3</option>
+                                                </select>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="txt_memo">모집 메모</label></dt>
+                                            <dd>
+                                                <textarea name="" id="txt_memo" cols="" rows="" placeholder="모집에 참고할 만한 메모를 남겨주세요.&#13;&#10;예시) 캐디비는 별도입니다."></textarea>
+                                                <span><em>0</em>/500</span>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preferred_member">
+                                <strong>선호하는 회원 정보를 입력해주세요.</strong>
+                                <div class="form_wrap">
+                                    <div class="form_type02 form_gender">
+                                        <dl>
+                                            <dt><label for="txt_gender">성별</label></dt>
+                                            <dd>
+                                                <div class="form_type03_2">
+                                                    <input type="checkbox" id="txt_gender" checked>
+                                                    <label for="txt_gender">무관</label>
+                                                </div>
+                                                <div class="form_type03_2">
+                                                    <input type="checkbox" id="txt_gender_2" checked>
+                                                    <label for="txt_gender_2">남자</label>
+                                                </div>
+                                                <div class="form_type03_2">
+                                                    <input type="checkbox" id="txt_gender_3">
+                                                    <label for="txt_gender_3">여자</label>
+                                                </div>
+                                                <div class="form_type03_2">
+                                                    <input type="checkbox" id="txt_gender_4">
+                                                    <label for="txt_gender_4">커플</label>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02 form_age">
+                                        <dl>
+                                            <dt><label for="txt_age">나이</label></dt>
+                                            <dd>
+                                                <input type="text" name="" id="txt_age" placeholder="나이를 입력해주세요" value="30세">
+                                                <em>~</em>
+                                                <input type="text" name="" id="txt_age_to" placeholder="나이를 입력해주세요" value="39세">
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="sel_hit">평균 타수</label></dt>
+                                            <dd>
+                                                <select name="" id="sel_hit" class="validField">
+                                                    <option value="">평균 타수를 선택해주세요</option>
+                                                    <option value="" selected>평균 90타</option>
+                                                    <option value="">선택 2</option>
+                                                    <option value="">선택 3</option>
+                                                </select>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 동반자 없음 (기본) -->
+                            <!--<div class="companion_info">
+                                <strong>동반자가 있다면 정보를 입력해주세요.</strong>
+                                <div class="form_type03_2">
+                                    <input type="checkbox" id="chk_companion">
+                                    <label for="chk_companion">동반자 있음</label>
+                                </div>
+                            </div>-->
+
+                            <!-- 동반자 있음 (1명) -->
+                            <!--<div class="companion_info">
+                                <strong>동반자가 있다면 정보를 입력해주세요.</strong>
+                                <div class="form_type03_2">
+                                    <input type="checkbox" id="chk_companion" checked>
+                                    <label for="chk_companion">동반자 있음</label>
+                                </div>
+
+                                <div class="form_wrap" data-companionInfo="companion_default">
+                                    <div class="form_type02 form_gender">
+                                        <dl>
+                                            <dt><label for="comp_gender_male_de">성별</label></dt>
+                                            <dd>
+                                                <div class="form_type03_1">
+                                                    <input type="radio" id="comp_gender_male_de" name="comp_gender" checked>
+                                                    <label for="comp_gender_male_de">남자</label>
+                                                </div>
+                                                <div class="form_type03_1">
+                                                    <input type="radio" id="comp_gender_female_de" name="comp_gender">
+                                                    <label for="comp_gender_female_de">여자</label>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="comp_age_de">나이</label></dt>
+                                            <dd><input type="text" name="" id="comp_age_de" placeholder="동반자의 나이를 입력해주세요"></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="form_type02">
+                                        <dl>
+                                            <dt><label for="comp_hit_de">평균 타수</label></dt>
+                                            <dd>
+                                                <select name="" id="comp_hit_de">
+                                                    <option value="">동반자의 평균 타수를 선택해주세요</option>
+                                                    <option value="">선택 1</option>
+                                                    <option value="">선택 2</option>
+                                                    <option value="">선택 3</option>
+                                                </select>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn_default btn_type03 btn_add_companion"><span>동반자 추가</span></button>
+                            </div>-->
+
+                            <!-- 동반자 있음 (2명) -->
+                            <div class="companion_info">
+                                <strong>동반자가 있다면 정보를 입력해주세요.</strong>
+                                <div class="form_type03_2">
+                                    <input type="checkbox" id="chk_companion" checked>
+                                    <label for="chk_companion">동반자 있음</label>
+                                </div>
+
+                                <ul class="tab_menu companion_list">
+                                    <li class="active">동반자 1<button type="button" class="btn_companion_delete">동반자 삭제</button></li>
+                                    <li>동반자 2<button type="button" class="btn_companion_delete">동반자 삭제</button></li>
+                                </ul>
+
+                                <div class="tab_contents">
+                                    <div class="form_wrap" data-companionInfo="companion_1">
+                                        <div class="form_type02 form_gender">
+                                            <dl>
+                                                <dt><label for="comp_gender_male">성별</label></dt>
+                                                <dd>
+                                                    <div class="form_type03_1">
+                                                        <input type="radio" id="comp_gender_male" name="comp_gender" checked>
+                                                        <label for="comp_gender_male">남자</label>
+                                                    </div>
+                                                    <div class="form_type03_1">
+                                                        <input type="radio" id="comp_gender_female" name="comp_gender">
+                                                        <label for="comp_gender_female">여자</label>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <div class="form_type02">
+                                            <dl>
+                                                <dt><label for="comp_age">나이</label></dt>
+                                                <dd><input type="text" name="" id="comp_age" placeholder="동반자의 나이를 입력해주세요" value="32세"></dd>
+                                            </dl>
+                                        </div>
+                                        <div class="form_type02">
+                                            <dl>
+                                                <dt><label for="comp_hit">평균 타수</label></dt>
+                                                <dd>
+                                                    <select name="" id="comp_hit" class="validField">
+                                                        <option value="">동반자의 평균 타수를 선택해주세요</option>
+                                                        <option value="" selected>평균 90타</option>
+                                                        <option value="">선택 2</option>
+                                                        <option value="">선택 3</option>
+                                                    </select>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="form_wrap" data-companionInfo="companion_2">
+                                        <div class="form_type02 form_gender">
+                                            <dl>
+                                                <dt><label for="comp_gender_male2">성별</label></dt>
+                                                <dd>
+                                                    <div class="form_type03_1">
+                                                        <input type="radio" id="comp_gender_male2" name="comp_gender2" checked>
+                                                        <label for="comp_gender_male2">남자</label>
+                                                    </div>
+                                                    <div class="form_type03_1">
+                                                        <input type="radio" id="comp_gender_female2" name="comp_gender2">
+                                                        <label for="comp_gender_female2">여자</label>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <div class="form_type02">
+                                            <dl>
+                                                <dt><label for="comp_age2">나이</label></dt>
+                                                <dd><input type="text" name="" id="comp_age2" placeholder="동반자2의 나이를 입력해주세요"></dd>
+                                            </dl>
+                                        </div>
+                                        <div class="form_type02">
+                                            <dl>
+                                                <dt><label for="comp_hit2">평균 타수</label></dt>
+                                                <dd>
+                                                    <select name="" id="comp_hit2">
+                                                        <option value="">동반자2의 평균 타수를 선택해주세요</option>
+                                                        <option value="">선택 1</option>
+                                                        <option value="">선택 2</option>
+                                                        <option value="">선택 3</option>
+                                                    </select>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn_default btn_type03 btn_add_companion" disabled><span>동반자 추가</span></button>
+                            </div>
+                        </div>
+                        <div class="btn_wrap">
+                            <button type="button" class="btn_default btn_type01">조인 모집 등록하기</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- 골프장 찾기 팝업 (기본) -->
+            <!--<div class="popup_address_wrap" id="modal">
+                <div class="content_wrap">
+                    <div class="popup_title_wrap">
+                        <strong>골프장 찾기</strong>
+                        <button type="button" class="btn_popup_close" onclick="modalhide()">닫기</button>
+                        <div class="addr_form">
+                            <input type="text" id="addr" placeholder="예시) 고양 컨트리클럽">
+                            <button type="button" onclick="goPage(1)" class="btn_addrSch">골프장 검색</button>
+                        </div>
+                        <div class="region_list">
+                            <ul>
+                                <li class="on"><button type="button">전체</button></li>
+                                <li><button type="button">서울</button></li>
+                                <li><button type="button">경기</button></li>
+                                <li><button type="button">인천</button></li>
+                                <li><button type="button">부산</button></li>
+                                <li><button type="button">대전</button></li>
+                                <li><button type="button">대구</button></li>
+                                <li><button type="button">울산</button></li>
+                                <li><button type="button">세종</button></li>
+                                <li><button type="button">광주</button></li>
+                                <li><button type="button">강원</button></li>
+                                <li><button type="button">충북</button></li>
+                                <li><button type="button">충남</button></li>
+                                <li><button type="button">경북</button></li>
+                                <li><button type="button">경남</button></li>
+                                <li><button type="button">전북</button></li>
+                                <li><button type="button">전남</button></li>
+                                <li><button type="button">제주</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="popup_cont_wrap bg" id="club_list">
+                        <ul class="sch_list">
+                            <li>
+                                <a href="#">
+                                    <strong>가평 베네스트 GC</strong>
+                                    <p>경기도 가평군 상면 둔덕말길 232</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>고양 컨트리클럽</strong>
+                                    <p>경기도 고양시 덕양구 흥도로 304-23</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>한림광릉 컨트리클럽 한림광릉 컨트리클럽 한림광릉 컨트리클럽</strong>
+                                    <p>경기도 남양주시 진접읍 팔야로 280</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>남양주 CC</strong>
+                                    <p>경기도 남양주시 오남읍 진건오남로 516-31</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>노스팜 컨트리클럽</strong>
+                                    <p>경기도 고양시 덕양구 홍도로 304-23 노스팜 컨트리클럽</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>뉴코리아 컨트리클럽</strong>
+                                    <p>경기도 고양시 덕양구 신원2로 57</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>올림픽 컨트리클럽</strong>
+                                    <p>경기도 고양시 덕양구 혜음로 301</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="dimmed" onclick="modalhide()"></p>
+            </div>-->
+
+            <!-- 골프장 찾기 팝업 (검색결과 있음) -->
+            <!--<div class="popup_address_wrap" id="modal">
+                <div class="content_wrap">
+                    <div class="popup_title_wrap">
+                        <strong>골프장 찾기</strong>
+                        <button type="button" class="btn_popup_close" onclick="modalhide()">닫기</button>
+                        <div class="addr_form">
+                            <input type="text" id="addr" placeholder="예시) 고양 컨트리클럽" value="고양">
+                            <button type="button" onclick="goPage(1)" class="btn_addrSch">골프장 검색</button>
+                        </div>
+                        <p class="sch_result"><em>22384</em>건의 검색 결과가 있습니다.</p>
+                    </div>
+                    <div class="popup_cont_wrap bg" id="club_list">
+                        <ul class="sch_list">
+                            <li>
+                                <a href="#">
+                                    <strong>고양 컨트리클럽</strong>
+                                    <p>경기도 고양시 덕양구 흥도로 304-23</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>뉴코리아 컨트리클럽</strong>
+                                    <p>경기도 고양시 덕양구 신원2로 57</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>올림픽 컨트리클럽</strong>
+                                    <p>경기도 고양시 덕양구 혜음로 301</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="dimmed" onclick="modalhide()"></p>
+            </div>-->
+
+            <!-- 골프장 찾기 팝업 (검색결과 없음) -->
+            <div class="popup_address_wrap" id="modal">
+                <div class="content_wrap">
+                    <div class="popup_title_wrap">
+                        <strong>골프장 찾기</strong>
+                        <button type="button" class="btn_popup_close" onclick="modalhide()">닫기</button>
+                        <div class="addr_form">
+                            <input type="text" id="addr" placeholder="예시) 고양 컨트리클럽" value="고양 304">
+                            <button type="button" onclick="goPage(1)" class="btn_addrSch">골프장 검색</button>
+                        </div>
+                        <p class="sch_result"><em>0</em>건의 검색 결과가 있습니다.</p>
+                    </div>
+                    <div class="popup_cont_wrap bg" id="club_list">
+                        <p class="no_list">
+                            검색 결과가 존재하지 않습니다.<br>
+                            검색어를 확인해주세요.
+                        </p>
+                    </div>
+                </div>
+                <p class="dimmed" onclick="modalhide()"></p>
+            </div>
+
+            <!-- /m/join/regist 에서 사용된 모달팝업 스크립트에서 팝업 노출되는 부분 show/hidden → Class 로 변경 -->
+            <script>
+                function modalshow(){
+                    $('#modal').addClass('active');
+                }
+                function modalhide(){
+                    $('#modal').removeClass('active');
+                }
+            </script>
+            <!-- //container -->
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})

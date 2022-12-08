@@ -1,0 +1,43 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+            <div class="page_wrap">
+                <div class="btn_align_left">
+                    <button type="button" class="btn_page_prev">이전페이지로 이동</button>
+                </div>
+                <h2>비밀번호 변경</h2>
+            </div>
+            <!-- container -->
+            <div class="find_idpw_wrap">
+                <div class="pass_chk">
+                    <p>
+                        인증이 완료되었습니다.<br>
+                        새로운 비밀번호를 설정해주세요.
+                    </p>
+                    <div class="find_info_form">
+                        <div class="form_type01">
+                            <div class="correct_msg">
+                                <input type="password" name="" id="txt_password" placeholder="알파벳 소문자+숫자+특수문자 8자 이상" value="123456">
+                                <label for="txt_password">새 비밀번호</label>
+                            </div>
+                            <span>사용 가능한 비밀번호입니다.</span>
+                        </div>
+                        <div class="form_type01">
+                            <div class="correct_msg">
+                                <input type="password" name="" id="txt_password_chk" placeholder="입력한 비밀번호 확인" value="123456">
+                                <label for="txt_password_chk">새 비밀번호 확인</label>
+                            </div>
+                            <span>비밀번호가 일치합니다.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn_wrap">
+                    <button type="button" class="btn_default btn_type01">확인</button>
+                </div>
+            </div>
+            <!-- //container -->
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})

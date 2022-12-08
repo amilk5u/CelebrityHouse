@@ -143,7 +143,6 @@ function join() {
         },
     });
 
-    /* 221206 start */
     //이미지 업로드 슬라이드
     var swiper = new Swiper(".silde_photo_wrap", {
         // slidesPerView: 4,
@@ -173,7 +172,6 @@ function join() {
             prevEl: ".swiper-button-prev",
         },
     });
-    /* 221206 end */
 
     //후기 별점
     var $starWrap = $(".comments_star div"),

@@ -1,0 +1,33 @@
+@@include("../../include/header.html",{
+    "pathDefault" : "../..",
+    "scrollHidden" : ""
+})
+            <!-- container -->
+            <button type="button" class="match_btn">오픈 매칭 참여 취소하기 Click Me!</button>
+            <!-- 오픈 매칭 참여 취소 확인 -->
+            <div class="popup_match_wrap">
+                <div class="content_wrap">
+                    <div class="popup_title_wrap">
+                        <strong>오픈 매칭 참여 취소 확인</strong>
+                        <button type="button" class="btn_popup_close">닫기</button>
+                    </div>
+                    <div class="popup_cont_wrap">
+                        <p>조인 날짜 이전에는 매칭 요청을 취소할 수 있으며, 서비스 정책에 따른 수수료를 제외한 금액이 환불됩니다.</p>
+                        <ul class="notification_type01">
+                            <li>조인 7일 전까지는 매칭 취소 시 전액 환불</li>
+                            <li>조인 5일 ~ 6일 전까지는 매칭 취소에 따른 수수료 50%를 제외한 금액 환불</li>
+                            <li>조인 4일 전부터는 환불 불가</li>
+                        </ul>
+                        <strong>오픈 매칭 참여를 취소하시겠습니까?</strong>
+                    </div>
+                    <div class="btn_wrap btn_half">
+                        <button type="button" class="btn_default btn_type02">취소</button>
+                        <button type="button" class="btn_default btn_type01">확인</button>
+                    </div>
+                </div>
+                <p class="dimmed"></p>
+            </div>
+            <!-- //container -->
+@@include("../../include/footer.html",{
+    "pathDefault" : "../.."
+})
